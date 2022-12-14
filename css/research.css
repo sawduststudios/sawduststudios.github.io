@@ -1,0 +1,289 @@
+html, body {
+    background-color: var(--blue);
+}
+
+.text-section {
+    display: block;
+    background-image: url(../images/backgrounds/levy_spodni_roh.svg), url(../images/backgrounds/pravy_horni_roh.svg);
+    background-repeat: no-repeat, no-repeat;
+    background-position: bottom left, top right;
+    background-size: contain, contain;   
+    background-color: var(--blue);
+    /* background-image: url(../images/backgrounds/pravy_horni_roh.svg);
+    background-repeat: no-repeat;
+    background-position: bottom right;
+    background-size: cover; */
+
+    overflow: hidden;
+}
+
+/* #region  research section */
+
+.research-section {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    /* background-image: url(../images/backgrounds/pravy_horni_roh.svg); */
+    background-position: right;
+    background-repeat: no-repeat;
+}
+
+.research-article {
+    float: left;
+    margin: 5vh 4vw 0px 10vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+}
+
+.research-text {
+    float: left;
+    width: 50vw;
+    margin: 50px 50px 20px 50px;
+    color: white;
+}
+
+.research-text h1 {
+    font-weight: 900;
+    font-size: 1.7rem;
+    margin: 0;
+}
+
+.research-text .line-sep {
+    height: 15px;
+    width: 300px;
+    max-width: 70vw;
+    background-color: var(--yellow);
+    margin: 25px 0;
+}
+
+.research-section button {
+    float: right;
+    margin-left: auto;
+    margin-right: 0px;
+    background-color: var(--yellow);
+    border-radius: 3vw;
+    border-color: var(--yellow);
+    border-style: solid;
+    box-shadow: none;
+    padding: 10px 25px;
+    font-weight: 700;
+    font-size: 1.1rem;
+    word-wrap: none;
+    color: var(--info-text-color);
+}
+
+.research-section button:hover {
+    background-color: var(--yellow-hover);
+    border-color: var(--yellow-hover);
+    cursor: pointer;
+}
+
+.research-section button:active {
+    background-color: var(--yellow-active);
+    border-color: var(--yellow-active);
+}
+
+.basic-research {
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.detailed-research {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease-out;
+}
+
+.detailed-research.active-research {
+    max-height: 550px;
+}
+
+#panacek-dalekohled {
+    margin: 100px 100px 0 0;
+    float: right;
+    max-width: 20vw;
+    min-width: 180px;
+    height: 500px;
+}
+
+/* #endregion */
+
+
+/* #region  about region */
+
+.about-section {
+    /* background-image: url(../images/backgrounds/levy_spodni_roh.svg); */
+    background-position: top left;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.about-div {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    justify-content: start;
+    margin: 0;
+    overflow-y: hidden;
+}
+
+#panacek-ntb {
+    max-width: 20vw;
+    min-width: 200px;
+    margin-left: 4vw;
+    margin-top: auto;
+    height: 300px;
+    transform: translateY(30%);
+}
+
+.about-article {
+    float: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+}
+
+.about-text {
+    float: left;
+    width: 40vw;
+    margin: 50px 50px 20px 50px;
+    color: var(--blue);
+    text-align: right;
+}
+
+.about-text h1 {
+    font-weight: 900;
+    font-size: 1.7rem;
+    margin: 0;
+    margin-right: 34px;
+}
+
+.about-text .line-sep {
+    height: 15px;
+    width: 150px;
+    max-width: 100vw;
+    background-color: var(--yellow);
+    margin-left: auto;
+    margin-right: 0;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.about-div button {
+    float: left;
+    margin-right: auto;
+    margin-left: 30px;
+    margin-bottom: 30px;
+    background-color: var(--yellow);
+    border-radius: 3vw;
+    border-color: var(--yellow);
+    border-style: solid;
+    box-shadow: none;
+    padding: 10px 25px;
+    font-weight: 700;
+    font-size: 1.1rem;
+    word-wrap: none;
+    color: var(--info-text-color);
+}
+
+.about-div button:hover {
+    background-color: var(--yellow-hover);
+    border-color: var(--yellow-hover);
+    cursor: pointer;
+}
+
+.about-div button:active {
+    background-color: var(--yellow-active);
+    border-color: var(--yellow-active);
+}
+
+.basic-about {
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.detailed-about {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease-out;
+}
+
+.detailed-about.active-about {
+    max-height: 1000px;
+}
+
+
+/* #endregion */
+
+
+@media (max-width: 870px) {
+    .body,
+    .carousel,
+    .carousel__slide,
+    .carousel__slide-list {
+        max-width: 100vw;
+        min-width: none;
+        background-color: var(--blue);
+    }
+    .research-section img {
+        display: none;
+    }
+    .research-text {
+        width: 90vw;
+        margin-left: 5vw;
+        margin-right: 5vw;
+    }
+    .research-text .line-sep {
+        margin: 15px 0;
+    }
+    .research-section button {
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .research-section button:hover {
+        background-color: var(--yellow-hover);
+        border-color: var(--yellow-hover);
+    }
+    .research-article {
+        margin-left: 1vw;
+        margin-right: 1vw;
+    }
+    .about-div img {
+        display: none;
+    }
+    .about-article {
+        margin: 0 1vw;
+    }
+    .about-text {
+        width: 90vw;
+        margin-left: 5vw;
+        margin-right: 5vw;
+        text-align: left;
+    }
+    .about-text .line-sep {
+        margin-right: auto;
+        margin-left: 0;
+    }
+    .about-div button {
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .about-div button:hover {
+        background-color: var(--yellow-hover);
+        border-color: var(--yellow-hover);
+    }
+
+    .text-section {
+        background: none;
+        background-color: var(--blue);
+    }
+
+    .about-text {
+        color: white;
+    }
+
+    .spacer {
+        display: none;
+    }
+}

@@ -1,0 +1,345 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <!-- My CSS -->
+    <link rel="stylesheet" href="css/carousel.css">
+    <link rel="stylesheet" href="css/filter.css">
+    <link rel="stylesheet" href="css/carousel_box.css">
+    <link rel="stylesheet" href="css/author.css">
+    <link rel="stylesheet" href="css/research.css"> 
+    
+    <link rel="stylesheet" href="css/queries.css">   
+
+    <title>O GAČR</title>
+  </head>
+  <body>
+    <!-- Carousel section -->
+    <section>
+        <!-- Filters -->
+        <div class="carousel__filter-container">
+            <div class="carousel__filter-button">
+                <div class="carousel__filter-button-detail">TECHNICKÉ<br>VĚDY</div>
+                <img src="images\icons\TV_ikona.svg" alt="">
+            </div>
+            <div class="carousel__filter-button">
+                <div class="carousel__filter-button-detail">VĚDY O NEŽIVÉ<br>PŘÍRODĚ</div>
+                <img src="images\icons\VoNP_ikona.svg" alt="">
+            </div>
+            <div class="carousel__filter-button">
+                <div class="carousel__filter-button-detail">LÉKAŘSKÉ<br>A BIOLOGICKÉ VĚDY</div>
+                <img src="images\icons\LaBV_ikona.svg" alt="">
+            </div>
+            <div class="carousel__filter-button">
+                <div class="carousel__filter-button-detail">SPOLEČENSKÉ<br>A HUMANITNÍ VĚDY</div>
+                <img src="images\icons\SaHV_ikona.svg" alt="">
+            </div>
+            <div class="carousel__filter-button">
+                <div class="carousel__filter-button-detail">ZEMĚDĚLSKÉ A BIOLOGICKO-<br>ENVIROMENTÁLNÍ VĚDY</div>
+                <img src="images\icons\ZaBEV_ikona.svg" alt="">
+            </div>
+        </div>
+        <!-- Slides -->
+        <div id="projectsCarousel" class="carousel slide" data-bs-ride="carousel" data-interval="50000">
+            <div class="carousel-inner">
+              <div class="carousel-item active bio">
+                <div class="slide-content">
+                  <img src="images/termit1.jpg" class="img-fluid w-100" alt="...">
+                  <div class="carousel__slide-box">
+                      <div class="carousel__slide-box_content">
+                          <p class="carousel__slide-header">Poznávání „elixíru mládí“</p>
+                          <p class="carousel__slide-info">Králové a královny termitů se dožívají výrazně delšího života než ostatní příslušníci jejich druhu. Proč tomu tak je? Pomáhá jim při tom zvláštní enzym, který zbrzďuje stárnutí buněk, jakýsi „elixír mládí“. Jeho poznání by jednou
+                              mohlo přispět i k prodloužení života lidí.
+                          </p>
+                      </div>                    
+                      <button class="carousel__slide-button"><p>VÍCE INFO</p></button>
+                  </div>
+                  <div class="carousel__slide-author-section">
+                    <div class="box">
+                        <div class="name">
+                            <h1>Název projektu:</h1>
+                            <div>Mechanismy dlouhověkosti králů a královen termitů</div>
+                        </div>
+                        <h1>Řešitel:</h1>
+                        <div>Mgr. Robert Hanus, Ph.D., Ústav organické chemie a biochemie Akademie věd ČR, Praha</div>
+                    </div>
+                    <div class="icon"></div>
+                  </div>
+                </div>                
+              </div>
+              <!-- <div class="carousel-item tech">
+                <div class="slide-content">
+                  <img src="images/termit1.jpg" class="img-fluid w-100" alt="...">
+                  <div class="carousel__slide-box">
+                      <div class="carousel__slide-box_content">
+                          <p class="carousel__slide-header">TECH 1</p>
+                          <p class="carousel__slide-info">Králové a královny termitů se dožívají výrazně delšího života než ostatní příslušníci jejich druhu. Proč tomu tak je? Pomáhá jim při tom zvláštní enzym, který zbrzďuje stárnutí buněk, jakýsi „elixír mládí“. Jeho poznání by jednou
+                              mohlo přispět i k prodloužení života lidí.
+                          </p>
+                      </div>                    
+                      <button class="carousel__slide-button"><p>VÍCE INFO</p></button>
+                  </div>
+                  <div class="carousel__slide-author-section">
+                    <div class="box">
+                        <div class="name">
+                            <h1>Název projektu:</h1>
+                            <div>Mechanismy dlouhověkosti králů a královen termitů</div>
+                        </div>
+                        <h1>Řešitel:</h1>
+                        <div>Mgr. Robert Hanus, Ph.D., Ústav organické chemie a biochemie Akademie věd ČR, Praha</div>
+                    </div>
+                    <div class="icon"></div>
+                </div>
+                </div>                
+              </div>
+              <div class="carousel-item env">
+                <div class="slide-content">
+                  <img src="images/termit1.jpg" class="img-fluid w-100" alt="...">
+                  <div class="carousel__slide-box">
+                      <div class="carousel__slide-box_content">
+                          <p class="carousel__slide-header">ENV 1</p>
+                          <p class="carousel__slide-info">Králové a královny termitů se dožívají výrazně delšího života než ostatní příslušníci jejich druhu. Proč tomu tak je? Pomáhá jim při tom zvláštní enzym, který zbrzďuje stárnutí buněk, jakýsi „elixír mládí“. Jeho poznání by jednou
+                              mohlo přispět i k prodloužení života lidí.
+                          </p>
+                      </div>                    
+                      <button class="carousel__slide-button"><p>VÍCE INFO</p></button>
+                  </div>
+                  <div class="carousel__slide-author-section">
+                    <div class="box">
+                        <div class="name">
+                            <h1>Název projektu:</h1>
+                            <div>Mechanismy dlouhověkosti králů a královen termitů</div>
+                        </div>
+                        <h1>Řešitel:</h1>
+                        <div>Mgr. Robert Hanus, Ph.D., Ústav organické chemie a biochemie Akademie věd ČR, Praha</div>
+                    </div>
+                    <div class="icon"></div>
+                </div>
+                </div>                
+              </div>
+              <div class="carousel-item bio">
+                <div class="slide-content">
+                  <img src="images/termit1.jpg" class="img-fluid w-100" alt="...">
+                  <div class="carousel__slide-box">
+                      <div class="carousel__slide-box_content">
+                          <p class="carousel__slide-header">BIO 2</p>
+                          <p class="carousel__slide-info">Králové a královny termitů se dožívají výrazně delšího života než ostatní příslušníci jejich druhu. Proč tomu tak je? Pomáhá jim při tom zvláštní enzym, který zbrzďuje stárnutí buněk, jakýsi „elixír mládí“. Jeho poznání by jednou
+                              mohlo přispět i k prodloužení života lidí.
+                          </p>
+                      </div>                    
+                      <button class="carousel__slide-button"><p>VÍCE INFO</p></button>
+                  </div>
+                  <div class="carousel__slide-author-section">
+                    <div class="box">
+                        <div class="name">
+                            <h1>Název projektu:</h1>
+                            <div>Mechanismy dlouhověkosti králů a královen termitů</div>
+                        </div>
+                        <h1>Řešitel:</h1>
+                        <div>Mgr. Robert Hanus, Ph.D., Ústav organické chemie a biochemie Akademie věd ČR, Praha</div>
+                    </div>
+                    <div class="icon"></div>
+                </div>
+                </div>                
+              </div>
+              <div class="carousel-item unnat">
+                <div class="slide-content">
+                  <img src="images/termit1.jpg" class="img-fluid w-100" alt="...">
+                  <div class="carousel__slide-box">
+                      <div class="carousel__slide-box_content">
+                          <p class="carousel__slide-header">UNNAT 1</p>
+                          <p class="carousel__slide-info">Králové a královny termitů se dožívají výrazně delšího života než ostatní příslušníci jejich druhu. Proč tomu tak je? Pomáhá jim při tom zvláštní enzym, který zbrzďuje stárnutí buněk, jakýsi „elixír mládí“. Jeho poznání by jednou
+                              mohlo přispět i k prodloužení života lidí.
+                          </p>
+                      </div>                    
+                      <button class="carousel__slide-button"><p>VÍCE INFO</p></button>
+                  </div>
+                  <div class="carousel__slide-author-section">
+                    <div class="box">
+                        <div class="name">
+                            <h1>Název projektu:</h1>
+                            <div>Mechanismy dlouhověkosti králů a královen termitů</div>
+                        </div>
+                        <h1>Řešitel:</h1>
+                        <div>Mgr. Robert Hanus, Ph.D., Ústav organické chemie a biochemie Akademie věd ČR, Praha</div>
+                    </div>
+                    <div class="icon"></div>
+                </div>
+                </div>                
+              </div>
+              <div class="carousel-item unnat">
+                <div class="slide-content">
+                  <img src="images/termit1.jpg" class="img-fluid w-100" alt="...">
+                  <div class="carousel__slide-box">
+                      <div class="carousel__slide-box_content">
+                          <p class="carousel__slide-header">UNNAT 2</p>
+                          <p class="carousel__slide-info">Králové a královny termitů se dožívají výrazně delšího života než ostatní příslušníci jejich druhu. Proč tomu tak je? Pomáhá jim při tom zvláštní enzym, který zbrzďuje stárnutí buněk, jakýsi „elixír mládí“. Jeho poznání by jednou
+                              mohlo přispět i k prodloužení života lidí.
+                          </p>
+                      </div>                    
+                      <button class="carousel__slide-button"><p>VÍCE INFO</p></button>
+                  </div>
+                  <div class="carousel__slide-author-section">
+                    <div class="box">
+                        <div class="name">
+                            <h1>Název projektu:</h1>
+                            <div>Mechanismy dlouhověkosti králů a královen termitů</div>
+                        </div>
+                        <h1>Řešitel:</h1>
+                        <div>Mgr. Robert Hanus, Ph.D., Ústav organické chemie a biochemie Akademie věd ČR, Praha</div>
+                    </div>
+                    <div class="icon"></div>
+                </div>
+                </div>                
+              </div>
+              <div class="carousel-item tech">
+                <div class="slide-content">
+                  <img src="images/termit1.jpg" class="img-fluid w-100" alt="...">
+                  <div class="carousel__slide-box">
+                      <div class="carousel__slide-box_content">
+                          <p class="carousel__slide-header">TECH 2</p>
+                          <p class="carousel__slide-info">Králové a královny termitů se dožívají výrazně delšího života než ostatní příslušníci jejich druhu. Proč tomu tak je? Pomáhá jim při tom zvláštní enzym, který zbrzďuje stárnutí buněk, jakýsi „elixír mládí“. Jeho poznání by jednou
+                              mohlo přispět i k prodloužení života lidí.
+                          </p>
+                      </div>                    
+                      <button class="carousel__slide-button"><p>VÍCE INFO</p></button>
+                  </div>
+                  <div class="carousel__slide-author-section">
+                    <div class="box">
+                        <div class="name">
+                            <h1>Název projektu:</h1>
+                            <div>Mechanismy dlouhověkosti králů a královen termitů</div>
+                        </div>
+                        <h1>Řešitel:</h1>
+                        <div>Mgr. Robert Hanus, Ph.D., Ústav organické chemie a biochemie Akademie věd ČR, Praha</div>
+                    </div>
+                    <div class="icon"></div>
+                </div>
+                </div>                
+              </div>
+              <div class="carousel-item socio">
+                <div class="slide-content">
+                  <img src="images/termit1.jpg" class="img-fluid w-100" alt="...">
+                  <div class="carousel__slide-box">
+                      <div class="carousel__slide-box_content">
+                          <p class="carousel__slide-header">SOCIO 1</p>
+                          <p class="carousel__slide-info">Králové a královny termitů se dožívají výrazně delšího života než ostatní příslušníci jejich druhu. Proč tomu tak je? Pomáhá jim při tom zvláštní enzym, který zbrzďuje stárnutí buněk, jakýsi „elixír mládí“. Jeho poznání by jednou
+                              mohlo přispět i k prodloužení života lidí.
+                          </p>
+                      </div>                    
+                      <button class="carousel__slide-button"><p>VÍCE INFO</p></button>
+                  </div>
+                  <div class="carousel__slide-author-section">
+                    <div class="box">
+                        <div class="name">
+                            <h1>Název projektu:</h1>
+                            <div>Mechanismy dlouhověkosti králů a královen termitů</div>
+                        </div>
+                        <h1>Řešitel:</h1>
+                        <div>Mgr. Robert Hanus, Ph.D., Ústav organické chemie a biochemie Akademie věd ČR, Praha</div>
+                    </div>
+                    <div class="icon"></div>
+                </div>
+                </div>                
+              </div>
+              <div class="carousel-item env">
+                <div class="slide-content">
+                  <img src="images/termit1.jpg" class="img-fluid w-100" alt="...">
+                  <div class="carousel__slide-box">
+                      <div class="carousel__slide-box_content">
+                          <p class="carousel__slide-header">ENV 2</p>
+                          <p class="carousel__slide-info">Králové a královny termitů se dožívají výrazně delšího života než ostatní příslušníci jejich druhu. Proč tomu tak je? Pomáhá jim při tom zvláštní enzym, který zbrzďuje stárnutí buněk, jakýsi „elixír mládí“. Jeho poznání by jednou
+                              mohlo přispět i k prodloužení života lidí.
+                          </p>
+                      </div>                    
+                      <button class="carousel__slide-button"><p>VÍCE INFO</p></button>
+                  </div>
+                  <div class="carousel__slide-author-section">
+                    <div class="box">
+                        <div class="name">
+                            <h1>Název projektu:</h1>
+                            <div>Mechanismy dlouhověkosti králů a královen termitů</div>
+                        </div>
+                        <h1>Řešitel:</h1>
+                        <div>Mgr. Robert Hanus, Ph.D., Ústav organické chemie a biochemie Akademie věd ČR, Praha</div>
+                    </div>
+                    <div class="icon"></div>
+                </div>
+                </div>                
+              </div> -->
+            <button class="carousel-control-prev" type="button" data-bs-target="#projectsCarousel" data-bs-slide="prev" style="opacity: 1;">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#projectsCarousel" data-bs-slide="next" style="opacity: 1;">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+    </section>
+
+    <section class="text-section">
+      <section class="research-section">                
+          <article class="research-article">
+              <div class="research-text">
+                  <h1>ZÁKLADNÍ<br>VÝZKUM V ČR</h1>
+                  <div class="line-sep"></div>
+                  <div class="basic-research">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Nullam dapibus fermentum
+                      ipsum. Morbi leo mi, nonummy eget tristique non, rhoncus non leo. Nullam sapien sem, ornare ac, nonummy non, lobortis a enim. Fusce wisi. Phasellus faucibus molestie nisl. Integer vulputate sem a nibh rutrum consequat. Nam
+                      quis nulla. Etiam dui sem, fermentum vitae, sagittis id, malesuada in, quam. Praesent in mauris eu tortor porttitor accumsan. Curabitur ligula sapien, pulvinar a vestibulum quis, facilisis vel sapien. Etiam dictum tincidunt
+                      diam. Nullam at arcu a est sollicitudin euismod. Nulla turpis magna, cursus sit amet, suscipit a, interdum id, felis. Praesent dapibus. Nullam justo enim, consectetuer nec, ullamcorper ac, vestibulum in, elit. Fusce tellus.
+                      Phasellus rhoncus. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+                  </div>
+                  <div class="detailed-research">Aliquam ornare wisi eu metus. Integer pellentesque quam vel velit. Morbi scelerisque luctus velit. Nullam justo enim, consectetuer nec, ullamcorper ac, vestibulum in, elit. In enim a arcu imperdiet malesuada. Praesent dapibus.
+                      Nullam dapibus fermentum ipsum. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Morbi scelerisque luctus velit. Fusce consectetuer risus a
+                      nunc. Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur? Etiam ligula pede, sagittis quis, interdum ultricies,
+                      scelerisque eu. Nullam eget nisl. Et harum quidem rerum facilis est et expedita distinctio. Suspendisse sagittis ultrices augue.
+                  </div>
+              </div>
+              <button class="research-button">VÍCE INFO</button>
+          </article>
+          <img src="images\panacek_dalekohled.svg" id="panacek-dalekohled" alt="">
+      </section>
+      <section class="about-section">
+        <div class="spacer" style="height: 200px; width: 100%;"></div>
+        <div class="about-div">            
+            <img src="images\panacek_NTB.svg" id="panacek-ntb" alt="">
+            <article class="about-article">
+                <div class="about-text">
+                    <h1>O GAČR</h1>
+                    <div class="line-sep"></div>
+                    <div class="basic-about">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Nullam dapibus fermentum
+                        ipsum. Morbi leo mi, nonummy eget tristique non, rhoncus non leo. Nullam sapien sem, ornare ac, nonummy non, lobortis a enim.
+                    </div>
+                    <div class="detailed-about">Aliquam ornare wisi eu metus. Integer pellentesque quam vel velit. Morbi scelerisque luctus velit. Nullam justo enim, consectetuer nec, ullamcorper ac, vestibulum in, elit. In enim a arcu imperdiet malesuada. Praesent dapibus.
+                        Nullam dapibus fermentum ipsum. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Morbi scelerisque luctus velit. Fusce consectetuer risus a
+                        nunc. Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur? Etiam ligula pede, sagittis quis, interdum ultricies,
+                        scelerisque eu. Nullam eget nisl. Et harum quidem rerum facilis est et expedita distinctio. Suspendisse sagittis ultrices augue.
+                    </div>
+                </div>
+                <button class="about-button">VÍCE INFO</button>
+            </article>
+        </div>
+        
+      </section>
+  </section>
+    
+
+    <!-- My JS -->
+    <script src="js/filtering.js"></script>
+    <script src="js/carousel_box.js"></script>
+    <script src="js/author.js"></script>
+    <script src="js/research.js"></script>
+    <script src="js/about.js"></script>
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <!-- JQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+  </body>
+</html>

@@ -1,0 +1,107 @@
+/* #region  carousel filter container */
+
+.carousel__filter-container {
+    width: 100%;
+    height: 68px;
+    background-color: rgba(255, 255, 255, 0.65);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 0px 0px;
+    padding: 0px 0px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 20;
+}
+
+.carousel__filter-button {
+    margin: 8px;
+    overflow: hidden;
+    border-radius: 50px;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    transition: background-color 1s;
+}
+
+.carousel__filter-button:hover {
+    background-color: var(--yellow);
+    cursor: pointer;
+}
+
+.carousel__filter-button:active {
+    background-color: salmon;
+}
+
+.carousel__filter-button img {
+    width: 45px;
+    height: 45px;
+    padding-right: 10px;
+    margin: 0;
+}
+
+.carousel__filter-button-detail {
+    max-width: 0;
+    overflow: hidden;
+    font-size: 14px;
+    font-weight: bold;
+    text-align: right;
+    visibility: hidden;
+    margin: 4px 7px 4px 0px;
+    overflow-wrap: none;
+    max-width: 0px;
+    color: rgba(0, 0, 0, 0);
+    transition: max-width 0.3s, color 0.35s cubic-bezier(0.830, -0.115, 0.875, -0.035), padding 0.3s, overflow-wrap 0.5s, visibility;
+}
+
+.carousel__filter-button:hover .carousel__filter-button-detail {
+    max-width: 230px;
+    padding: 1vh 0.4vw 1vh 1vw;
+    color: rgba(0, 0, 0, 1);
+    visibility: visible;
+}
+
+.carousel__filter-button.active-filter {
+    background-color: var(--yellow);
+    cursor: pointer;
+}
+
+.carousel__filter-button.active-filter .carousel__filter-button-detail {
+    max-width: 230px;
+    padding: 1vh 0.4vw 1vh 1vw;
+    color: rgba(0, 0, 0, 1);
+    visibility: visible;
+}
+
+/*highDPI screen */
+
+@media (max-width: 800px),
+(max-height: 750px) {
+    .carousel__filter-container {
+        height: 50px;
+    }
+    .carousel__filter-button img {
+        width: 30px;
+        height: 30px;
+    }
+    .carousel__filter-button-detail {
+        font-size: 10px;
+    }
+    .carousel__slide-header {
+        font-size: 2rem;
+    }
+    .carousel__slide-header.shown-detail {
+        font-size: 1.6rem;
+    }
+    .carousel__slide-info {
+        font-size: 1rem;
+    }
+    .carousel__slide-details {
+        font-size: 1rem;
+    }
+}
+
+/* #endregion */

@@ -1,0 +1,42 @@
+:root {
+    --yellow: #fdc300;
+    --blue: #162044;
+    --info-text-color: #363636;
+
+    --yellow-hover: darkorange;
+    --yellow-active: white;
+
+    --blue-hover: #162044;
+}
+
+.carousel-control-next, .carousel-control-prev {
+    width: 10vw;
+}
+
+.carousel-control-next:active, .carousel-control-prev:active {
+    cursor: default;
+}
+
+.carousel-control-prev-icon {
+    background-image: url(../images/Carousel\ elements/left.png);
+    transform: translateX(-25%);
+    transition: transform 0.5s;
+}
+.carousel-control-prev:hover .carousel-control-prev-icon {
+    background-image: url(../images/Carousel\ elements/left_hover.png);
+    transform: translateX(-50%);
+}
+
+.carousel-control-next-icon {
+    background-image: url(../images/Carousel\ elements/right.png);
+    transform: translateX(+25%);
+    transition: transform 0.5s;
+}
+.carousel-control-next:hover .carousel-control-next-icon {
+    background-image: url(../images/Carousel\ elements/right_hover.png);
+    transform: translateX(+50%);
+}
+
+
+
+
