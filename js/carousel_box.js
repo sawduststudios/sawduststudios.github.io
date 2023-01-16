@@ -25,7 +25,7 @@ const slideDetailTrigger = () => {
             // detail.classList.remove("shown-detail");
             info.innerHTML = normal_text
             header.classList.remove("shown-detail");
-            $("#projectsCarousel").carousel("cycle");
+            // $("#projectsCarousel").carousel("cycle");
             button.innerHTML = "<p>VÍCE INFO</p>";
         },400);
     } else {

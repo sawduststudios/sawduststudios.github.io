@@ -2,6 +2,7 @@
 const myCarousel = document.getElementById('projectsCarousel')
 const slides = document.querySelectorAll('.carousel-item');
 const prevButton = document.querySelector('.carousel-control-prev')
+const nextButton = document.querySelector('.carousel-control-next')
 var leftScroll = false
 var slideIndex = 0
 
@@ -11,31 +12,42 @@ const filterButtons = Array.from(filterContainer.children);
 // filters that belong to this category have this class on them
 var currentFilter = '';
 
-function UpdateSlideIndex(delta) {
-    slideIndex = slideIndex + delta + slideIndex
+
+const updateSlideIndex = (delta) => {
+    slideIndex = slideIndex + delta + slides.length
     slideIndex = slideIndex % slides.length;
     console.log("slide index is: " + slideIndex)
-}
-
+};
 
 // myCarousel.addEventListener('slide.bs.carousel', event => {
 //     // alert('A new slide is about to be shown!')
 //     console.log('A new slide is about to be shown!')
-//     findNextFilteredSlide()
+//     // if (currentFilter === '') {return} 
+//     // var target = findNextFilteredSlide()
+//     myCarousel.carousel(3)
 //   });
 
-// // finds the index of the next filtered slide
-// function findNextFilteredSlide() {
-//     var curr_slide = document.querySelector('.active')
-//     var start_i = slides.index(curr_slide)
-//     console.log("curr slide was: " + start_i)
-// }
+// finds the index of the next filtered slide
+function findNextFilteredSlide() {
+    for (let i=0; i < slides.length; i++)
+    {
+        
+    }
+}
 
 
 // adds a listener to the event 'when carsousel slide finishes'
-myCarousel.addEventListener('slid.bs.carousel', event => {
-  if (currentFilter === '') {return}    
+myCarousel.addEventListener('slide.bs.carousel', event => {
+  if (leftScroll)
+  {
+      updateSlideIndex(-1);
+  }    
+  else
+  {
+      updateSlideIndex(1);
+  }
   var curr_slide = document.querySelector('.active')
+  if (currentFilter === '') {return}      
   // if the curr slide is not in the filtered class
   if(!(curr_slide.classList.contains(currentFilter)))
   {
@@ -43,7 +55,7 @@ myCarousel.addEventListener('slid.bs.carousel', event => {
     {
         // scroll left
         $("#projectsCarousel").carousel("prev");
-        UpdateSlideIndex(-1);
+        // updateSlideIndex(-1);
         // keep scrolling left until a match is found
         var new_slide = document.querySelector('.active')
         if(new_slide.classList.contains(currentFilter))
@@ -53,7 +65,7 @@ myCarousel.addEventListener('slid.bs.carousel', event => {
     {
         // scroll right
         $("#projectsCarousel").carousel("next");
-        UpdateSlideIndex(1);
+        // updateSlideIndex(1);
     }
   }
 })
@@ -67,11 +79,19 @@ prevButton.addEventListener('click', e => {
     prevButtonClick();
 })
 
+const nextButtonClick = () => {
+    leftScroll = false
+};
+nextButton.addEventListener('click', e => {
+    nextButtonClick();
+})
+
 
 // ---- SELECTING A NEW FILTER ----
 
 // runs when a new filter is selected
 const activateFirstFilteredSlide = () => {
+    leftScroll = false
     $("#projectsCarousel").carousel("next");
 }
 
@@ -132,6 +152,7 @@ filterButtons.forEach((button, index) => {
     filterButtons[index].addEventListener('click', e => {
         setFilter(index);
     })
+    leftScroll = false
 })
 
 
