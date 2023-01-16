@@ -3,12 +3,34 @@ const myCarousel = document.getElementById('projectsCarousel')
 const slides = document.querySelectorAll('.carousel-item');
 const prevButton = document.querySelector('.carousel-control-prev')
 var leftScroll = false
+var slideIndex = 0
 
 const filterContainer = document.querySelector('.carousel__filter-container');
 const filterButtons = Array.from(filterContainer.children);
 // represents the current filter from options 'tech', 'unnat', 'bio', 'socio', 'env';
 // filters that belong to this category have this class on them
 var currentFilter = '';
+
+function UpdateSlideIndex(delta) {
+    slideIndex = slideIndex + delta + slideIndex
+    slideIndex = slideIndex % slides.length;
+    console.log("slide index is: " + slideIndex)
+}
+
+
+// myCarousel.addEventListener('slide.bs.carousel', event => {
+//     // alert('A new slide is about to be shown!')
+//     console.log('A new slide is about to be shown!')
+//     findNextFilteredSlide()
+//   });
+
+// // finds the index of the next filtered slide
+// function findNextFilteredSlide() {
+//     var curr_slide = document.querySelector('.active')
+//     var start_i = slides.index(curr_slide)
+//     console.log("curr slide was: " + start_i)
+// }
+
 
 // adds a listener to the event 'when carsousel slide finishes'
 myCarousel.addEventListener('slid.bs.carousel', event => {
@@ -21,6 +43,7 @@ myCarousel.addEventListener('slid.bs.carousel', event => {
     {
         // scroll left
         $("#projectsCarousel").carousel("prev");
+        UpdateSlideIndex(-1);
         // keep scrolling left until a match is found
         var new_slide = document.querySelector('.active')
         if(new_slide.classList.contains(currentFilter))
@@ -30,6 +53,7 @@ myCarousel.addEventListener('slid.bs.carousel', event => {
     {
         // scroll right
         $("#projectsCarousel").carousel("next");
+        UpdateSlideIndex(1);
     }
   }
 })
@@ -111,15 +135,16 @@ filterButtons.forEach((button, index) => {
 })
 
 
-const refilterSlides = () => {
-    slides.forEach((slide, index) => {
-        if (currentFilter === '' || slide.classList.contains(currentFilter))
-        {
-            slide.classList.remove('d-none')
-        }
-        else
-        {
-            slide.classList.add('d-none')
-        }
-    })
-}
+// issue - hidden slides just do not appear but take up time
+// const refilterSlides = () => {
+//     slides.forEach((slide, index) => {
+//         if (currentFilter === '' || slide.classList.contains(currentFilter))
+//         {
+//             slide.classList.remove('d-none')
+//         }
+//         else
+//         {
+//             slide.classList.add('d-none')
+//         }
+//     })
+// }
