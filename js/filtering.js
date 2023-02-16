@@ -15,14 +15,17 @@ var currentFilter = '';
 
 $(document).ready(function() {  
     // Add a click event listener to the "Next" carousel button
-    $('.carousel-control-next').on('click', function() {
-        console.log("Next button clicked!")
-        goToNextSlide();
+    $('.carousel-control-next').on('click', function(event) {
+        goToNextSlide(event);
+    });
+    // Add a click event listener to the "Prev" carousel button
+    $('.carousel-control-prev').on('click', function(event) {
+        goToPrevSlide(event);
     });
   });
 
+
 function goToNextSlide() {
-    console.log("Going to next filtered slide.");
     // Check if the currentFilter string is empty
     if (currentFilter.length > 0) {
         // Find the next slide with the desired class
@@ -32,21 +35,39 @@ function goToNextSlide() {
         if ($nextSlide.length === 0) {
             $nextSlide = $('.carousel-item').siblings('.' + currentFilter).filter(':first');
         }
-
-        console.log("    Curr filter is:", currentFilter)
-        console.log("    Next slide class list:", $nextSlide.classList)
-
         if ($nextSlide.length > 0) {
             // If a slide with the class was found, update the carousel to display it
             $('#projectsCarousel').carousel($nextSlide.index());
         } else {
-            // If no slide with the class was found, do nothing
-            return;
+            // If no slide with the class was found, do normal next
+            $('#projectsCarousel').carousel('next');
         }
     } else {
-    console.log("...No filter was set...")
     // If the currentFilter string is empty, proceed to the next slide as usual
     $('#projectsCarousel').carousel('next');
+    }
+}
+
+function goToPrevSlide() {
+    // Check if the currentFilter string is empty
+    if (currentFilter.length > 0) {
+        // Find the next slide with the desired class
+        var $prevSlide = $('.carousel-item.active').prevAll('.carousel-item').filter('.' + currentFilter).first();
+
+        // If no slide with the desired class is found, loop back to the first slide with the desired class
+        if ($prevSlide.length === 0) {
+            $prevSlide = $('.carousel-item').siblings('.' + currentFilter).last();
+        }
+        if ($prevSlide.length > 0) {
+            // If a slide with the class was found, update the carousel to display it
+            $('#projectsCarousel').carousel($prevSlide.index());
+        } else {
+            // If no slide with the class was found, do normal prev
+            $('#projectsCarousel').carousel('prev');
+        }
+    } else {
+    // If the currentFilter string is empty, proceed to the next slide as usual
+    $('#projectsCarousel').carousel('prev');
     }
 }
 
@@ -55,7 +76,12 @@ function goToNextSlide() {
 
 // runs when a new filter is selected
 const activateFirstFilteredSlide = () => {
-    goToNextSlide();
+    if ($('.carousel-item.active').hasClass(currentFilter)) {
+        return;
+    }
+    else {
+        goToNextSlide();
+    }    
 }
 
 // sets a new filter and loads the first slide in that category
