@@ -13,86 +13,49 @@ const filterButtons = Array.from(filterContainer.children);
 var currentFilter = '';
 
 
-const updateSlideIndex = (delta) => {
-    slideIndex = slideIndex + delta + slides.length
-    slideIndex = slideIndex % slides.length;
-    console.log("slide index is: " + slideIndex)
-};
+$(document).ready(function() {  
+    // Add a click event listener to the "Next" carousel button
+    $('.carousel-control-next').on('click', function() {
+        console.log("Next button clicked!")
+        goToNextSlide();
+    });
+  });
 
-// myCarousel.addEventListener('slide.bs.carousel', event => {
-//     // alert('A new slide is about to be shown!')
-//     console.log('A new slide is about to be shown!')
-//     // if (currentFilter === '') {return} 
-//     // var target = findNextFilteredSlide()
-//     myCarousel.carousel(3)
-//   });
+function goToNextSlide() {
+    console.log("Going to next filtered slide.");
+    // Check if the currentFilter string is empty
+    if (currentFilter.length > 0) {
+        // Find the next slide with the desired class
+        var $nextSlide = $('.carousel-item.active').nextAll('.carousel-item').filter('.' + currentFilter).first();
 
-// finds the index of the next filtered slide
-function findNextFilteredSlide() {
-    for (let i=0; i < slides.length; i++)
-    {
-        
+        // If no slide with the desired class is found, loop back to the first slide with the desired class
+        if ($nextSlide.length === 0) {
+            $nextSlide = $('.carousel-item').siblings('.' + currentFilter).filter(':first');
+        }
+
+        console.log("    Curr filter is:", currentFilter)
+        console.log("    Next slide class list:", $nextSlide.classList)
+
+        if ($nextSlide.length > 0) {
+            // If a slide with the class was found, update the carousel to display it
+            $('#projectsCarousel').carousel($nextSlide.index());
+        } else {
+            // If no slide with the class was found, do nothing
+            return;
+        }
+    } else {
+    console.log("...No filter was set...")
+    // If the currentFilter string is empty, proceed to the next slide as usual
+    $('#projectsCarousel').carousel('next');
     }
 }
-
-
-// adds a listener to the event 'when carsousel slide finishes'
-myCarousel.addEventListener('slide.bs.carousel', event => {
-  if (leftScroll)
-  {
-      updateSlideIndex(-1);
-  }    
-  else
-  {
-      updateSlideIndex(1);
-  }
-  var curr_slide = document.querySelector('.active')
-  if (currentFilter === '') {return}      
-  // if the curr slide is not in the filtered class
-  if(!(curr_slide.classList.contains(currentFilter)))
-  {
-    if (leftScroll)
-    {
-        // scroll left
-        $("#projectsCarousel").carousel("prev");
-        // updateSlideIndex(-1);
-        // keep scrolling left until a match is found
-        var new_slide = document.querySelector('.active')
-        if(new_slide.classList.contains(currentFilter))
-            leftScroll = false
-    }
-    else
-    {
-        // scroll right
-        $("#projectsCarousel").carousel("next");
-        // updateSlideIndex(1);
-    }
-  }
-})
-
-// handling state logic for direction when looking for a filtered slide
-const prevButtonClick = () => {
-    leftScroll = true
-};
-// adding a listener to click on prev slide button
-prevButton.addEventListener('click', e => {
-    prevButtonClick();
-})
-
-const nextButtonClick = () => {
-    leftScroll = false
-};
-nextButton.addEventListener('click', e => {
-    nextButtonClick();
-})
 
 
 // ---- SELECTING A NEW FILTER ----
 
 // runs when a new filter is selected
 const activateFirstFilteredSlide = () => {
-    leftScroll = false
-    $("#projectsCarousel").carousel("next");
+    goToNextSlide();
 }
 
 // sets a new filter and loads the first slide in that category
@@ -130,6 +93,7 @@ const setFilter = (index) => {
         if (currentFilter == filterClass) 
         { return; }
         currentFilter = filterClass;
+        console.log("Current filter is:", currentFilter)
         // if the current slide is not in the required category
         var curr_slide = document.querySelector('.active')
         if (!(curr_slide.classList.contains(currentFilter)))
@@ -154,18 +118,3 @@ filterButtons.forEach((button, index) => {
     })
     leftScroll = false
 })
-
-
-// issue - hidden slides just do not appear but take up time
-// const refilterSlides = () => {
-//     slides.forEach((slide, index) => {
-//         if (currentFilter === '' || slide.classList.contains(currentFilter))
-//         {
-//             slide.classList.remove('d-none')
-//         }
-//         else
-//         {
-//             slide.classList.add('d-none')
-//         }
-//     })
-// }
