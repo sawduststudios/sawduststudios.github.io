@@ -4,7 +4,6 @@ var detail_text = "<p style=\"font-weight: 800;\">Králové a královny termitů
 var carousel = document.querySelector("#projectsCarousel")
 var infoButtonList = document.querySelectorAll('.carousel__slide-button');
 
-// $("#projectsCarousel").carousel("pause");
 
 infoButtonList.forEach((button, index) => {
     var currSlide = button.closest(".carousel__slide-box");
@@ -12,30 +11,54 @@ infoButtonList.forEach((button, index) => {
 });
 
 const slideDetailTrigger = () => {
-    console.debug("click")
     var slide = document.querySelector('.active')
     var box = slide.querySelector('.carousel__slide-box')
     var info = slide.querySelector('.carousel__slide-info')
+
     // var detail = slide.querySelector('.carousel__slide-details');
+
     var header = slide.querySelector('.carousel__slide-header');
-    var button = slide.querySelector('.carousel__slide-button')
+    var button = slide.querySelector('.carousel__slide-button');
+
     if (header.classList.contains("shown-detail")) {
-        window.scrollTo(0, 0);        
-        setTimeout(function () {
-            // detail.classList.remove("shown-detail");
-            info.innerHTML = normal_text
-            header.classList.remove("shown-detail");
-            // $("#projectsCarousel").carousel("cycle");
-            button.innerHTML = "<p>VÍCE INFO</p>";
-        },400);
+        hideBoxDetail(slide, box, info, header, button);
     } else {
-        // detail.classList.add("shown-detail");
-        info.innerHTML = detail_text
-        header.classList.add("shown-detail");
-        $("#projectsCarousel").carousel("pause");
-        button.innerHTML = "<p>MÉNĚ INFO</p>";
+        showBoxDetail(slide, box, info, header, button);
     }
 }
 
 
+function tryHideCurrentBox() {
+    var slide = document.querySelector('.active')
+    var box = slide.querySelector('.carousel__slide-box')
+    var info = slide.querySelector('.carousel__slide-info')
 
+    var header = slide.querySelector('.carousel__slide-header');
+    var button = slide.querySelector('.carousel__slide-button');
+
+    if (header.classList.contains("shown-detail")) {
+        hideBoxDetail(slide, box, info, header, button);
+    }
+}
+
+
+function showBoxDetail(slide, box, info, header, button) {
+    // detail.classList.add("shown-detail");
+    info.innerHTML = detail_text
+    header.classList.add("shown-detail");
+    $("#projectsCarousel").carousel("pause");
+    button.innerHTML = "<p>MÉNĚ INFO</p>";
+    boxDetailState(true);
+}
+
+function hideBoxDetail(slide, box, info, header, button) {
+    window.scrollTo(0, 0);        
+    setTimeout(function () {
+        // detail.classList.remove("shown-detail");
+        info.innerHTML = normal_text
+        header.classList.remove("shown-detail");
+        // $("#projectsCarousel").carousel("cycle");
+        button.innerHTML = "<p>VÍCE INFO</p>";
+        boxDetailState(false);
+    },100);
+}

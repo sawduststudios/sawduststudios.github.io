@@ -26,6 +26,11 @@ $(document).ready(function() {
 
 
 function goToNextSlide() {
+    // Hide the project box detail if open
+    tryHideCurrentBox();
+    // Hide author detail if open
+    tryHideAuthorDetail();
+
     // Check if the currentFilter string is empty
     if (currentFilter.length > 0) {
         // Find the next slide with the desired class
@@ -49,6 +54,11 @@ function goToNextSlide() {
 }
 
 function goToPrevSlide() {
+    // Hide the project box detail if open
+    tryHideCurrentBox();
+    // Hide author detail if open
+    tryHideAuthorDetail();
+    
     // Check if the currentFilter string is empty
     if (currentFilter.length > 0) {
         // Find the next slide with the desired class

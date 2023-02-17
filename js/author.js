@@ -1,9 +1,9 @@
 const authorDetailTrigger = (item, index) => {
-    var theBox = item.querySelector('.box')
+    var theBox = item.querySelector('.box');
     if (theBox.classList.contains("show-info")) {
-        theBox.classList.remove("show-info");
+        authorDetailOff(theBox);
     } else {
-        theBox.classList.add("show-info");
+        authorDetailOn(theBox);
     }
 }
 
@@ -12,3 +12,24 @@ authorBoxList.forEach((item, index) => {
     var icon = item.querySelector('.icon');
     icon.addEventListener('click', e => authorDetailTrigger(item, index))
 })
+
+
+
+function tryHideAuthorDetail() {
+    var activeSlide = document.querySelector('.active');
+    var theBox = activeSlide.querySelector('.carousel__slide-author-section .box');
+    if (theBox.classList.contains("show-info")) {
+        authorDetailOff(theBox);
+    }
+}
+
+function authorDetailOn(infoBox) {
+    infoBox.classList.add("show-info");
+    authorInfoState(true);
+}
+
+function authorDetailOff(infoBox) {
+    infoBox.classList.remove("show-info");
+    authorInfoState(false);
+}
+
