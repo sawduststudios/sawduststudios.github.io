@@ -139,12 +139,13 @@ const setFilter = (index) => {
             // new_slide.classList.add('active')
             activateFirstFilteredSlide()
         }
-        
+        filteringState(true);
     } 
     // disabeling an active filter
     else {
         filterButtons[index].classList.remove('active-filter');
         currentFilter = '';
+        filteringState(false);
     }
 }
 

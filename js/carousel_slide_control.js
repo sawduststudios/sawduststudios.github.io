@@ -6,6 +6,7 @@ var slideInterval = 5000;
 // Flags to represent the state
 var boxDetailOn = false;
 var authorInfoOn = false;
+var filterOn = false;
 
 function boxDetailState(newState) {
     // console.log("BOX state changed", newState);
@@ -19,8 +20,14 @@ function authorInfoState(newState) {
     updateCarouselSlidingState();
 }
 
+function filteringState(newState) {
+    // console.log("FILTER state changed", newState);
+    filterOn = newState;
+    updateCarouselSlidingState();
+}
+
 function updateCarouselSlidingState() {
-    var shouldSlide = !(boxDetailOn || authorInfoOn);
+    var shouldSlide = !(boxDetailOn || authorInfoOn || filterOn);
 
     if (shouldSlide) {
         startCarousel();
@@ -38,12 +45,12 @@ $(document).ready(function() {
   });
 
   function stopCarousel() {
-    console.log("Carousel STOP sliding...");
+    // console.log("Carousel STOP sliding...");
     carousel.carousel('pause');
   }
 
   function startCarousel() {
-    console.log("Carousel START sliding...");
+    // console.log("Carousel START sliding...");
     carousel.carousel('cycle');
   }
   
