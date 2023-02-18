@@ -1,7 +1,7 @@
 // Find the Bootstrap carousel with id "projectsCarousel"
 var carousel = $('#projectsCarousel');
 // The slide interval for the carousel
-var slideInterval = 5000;
+const slideInterval = 7000;
 
 // Flags to represent the state
 var boxDetailOn = false;
