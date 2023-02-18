@@ -1,5 +1,5 @@
 var normal_text = "<p style=\"font-weight: 800;\">Králové a královny termitů se dožívají výrazně delšího života než ostatní příslušníci jejich druhu. Proč tomu tak je? Pomáhá jim při tom zvláštní enzym, který zbrzďuje stárnutí buněk, jakýsi „elixír mládí“. Jeho poznání by jednou mohlo přispět i k prodloužení života lidí.</p>"
-var detail_text = "<p style=\"font-weight: 800;\">Králové a královny termitů se dožívají výrazně delšího života než ostatní příslušníci jejich druhu. Proč tomu tak je? Pomáhá jim při tom zvláštní enzym, který zbrzďuje stárnutí buněk, jakýsi „elixír mládí“. Jeho poznání by jednou mohlo přispět i k prodloužení života lidí.</p><br><p style=\"font-weight: 500;\">Jednotky dědičné informace (geny) jsou v jádru buňky uloženy v chromozomech. Každý chromozom má na svých koncích část zvanou telomera, která chrání chromozomy před zkracováním při dělení buněk. Zkracování je spojováno se stárnutím buňky a vyšším rizikem jejího poškození nemocemi.\nV některých buňkách však vzniká enzym telomeráza, který se navazuje na konce telomer a délku chromozomů prodlužuje. Vědci ve světě proto zjišťují, zda se telomeráza dá využít v medicíně.<br><br>Výzkum financovaný Grantovou agenturou ČR sledoval telomerázu u dlouhověkého hmyzu – králů a královen u termitů a také královen u včel. Ukázalo se, že i u nich je aktivita telomerázy vyšší než u krátce žijících dělnic, některé její projevy jsou však jiné než v buňkách savců. Výzkumníci z Akademie věd ČR proto nyní zjišťují, jaké ještě nepoznané vlastnosti telomeráza má a zda to může mít dopad pro přípravu potenciálních léků i pro lidi. Jednotky dědičné informace (geny) jsou v jádru buňky uloženy v chromozomech. Každý chromozom má na svých koncích část zvanou telomera, která chrání chromozomy před zkracováním při dělení buněk. Zkracování je spojováno se stárnutím buňky a vyšším rizikem jejího poškození nemocemi. V některých buňkách však vzniká enzym telomeráza, který se navazuje na konce telomer a délku chromozomů prodlužuje. Vědci ve světě proto zjišťují, zda se telomeráza dá využít v medicíně. Výzkum financovaný Grantovou agenturou ČR sledoval telomerázu u dlouhověkého hmyzu – králů a královen u termitů a také královen u včel. Ukázalo se, že i u nich je aktivita telomerázy vyšší než u krátce žijících dělnic, některé její projevy jsou však jiné než v buňkách savců. Výzkumníci z Akademie věd ČR proto nyní zjišťují, jaké ještě nepoznané vlastnosti telomeráza má a zda to může mít dopad pro přípravu potenciálních léků i pro lidi.</p>"
+var detail_text = "<p style=\"font-weight: 800;\">Králové a královny termitů se dožívají výrazně delšího života než ostatní příslušníci jejich druhu. Proč tomu tak je? Pomáhá jim při tom zvláštní enzym, který zbrzďuje stárnutí buněk, jakýsi „elixír mládí“. Jeho poznání by jednou mohlo přispět i k prodloužení života lidí.</p><p style=\"font-weight: 500;\">Jednotky dědičné informace (geny) jsou v jádru buňky uloženy v chromozomech. Každý chromozom má na svých koncích část zvanou telomera, která chrání chromozomy před zkracováním při dělení buněk. Zkracování je spojováno se stárnutím buňky a vyšším rizikem jejího poškození nemocemi.\nV některých buňkách však vzniká enzym telomeráza, který se navazuje na konce telomer a délku chromozomů prodlužuje. Vědci ve světě proto zjišťují, zda se telomeráza dá využít v medicíně.<br><br>Výzkum financovaný Grantovou agenturou ČR sledoval telomerázu u dlouhověkého hmyzu – králů a královen u termitů a také královen u včel. Ukázalo se, že i u nich je aktivita telomerázy vyšší než u krátce žijících dělnic, některé její projevy jsou však jiné než v buňkách savců. Výzkumníci z Akademie věd ČR proto nyní zjišťují, jaké ještě nepoznané vlastnosti telomeráza má a zda to může mít dopad pro přípravu potenciálních léků i pro lidi. Jednotky dědičné informace (geny) jsou v jádru buňky uloženy v chromozomech. Každý chromozom má na svých koncích část zvanou telomera, která chrání chromozomy před zkracováním při dělení buněk. Zkracování je spojováno se stárnutím buňky a vyšším rizikem jejího poškození nemocemi. V některých buňkách však vzniká enzym telomeráza, který se navazuje na konce telomer a délku chromozomů prodlužuje. Vědci ve světě proto zjišťují, zda se telomeráza dá využít v medicíně. Výzkum financovaný Grantovou agenturou ČR sledoval telomerázu u dlouhověkého hmyzu – králů a královen u termitů a také královen u včel. Ukázalo se, že i u nich je aktivita telomerázy vyšší než u krátce žijících dělnic, některé její projevy jsou však jiné než v buňkách savců. Výzkumníci z Akademie věd ČR proto nyní zjišťují, jaké ještě nepoznané vlastnosti telomeráza má a zda to může mít dopad pro přípravu potenciálních léků i pro lidi.</p>"
 
 var carousel = document.querySelector("#projectsCarousel")
 var infoButtonList = document.querySelectorAll('.carousel__slide-button');
@@ -62,3 +62,47 @@ function hideBoxDetail(slide, box, info, header, button) {
         boxDetailState(false);
     },100);
 }
+
+function adjustLayout() {
+    // Get the height of the carousel
+    var carouselHeight = document.getElementById("projectsCarousel").clientHeight;
+
+    console.log("Adjusting layout... Carousel height:", carouselHeight);
+  
+    // Set the max-height of the slide info box to 75% of the carousel height
+    var slideBoxes = document.getElementsByClassName("carousel__slide-box");
+    var slideInfos = document.getElementsByClassName("carousel__slide-info");
+
+    var boxCoeff = 0.70;
+    if (carouselHeight > 650) {
+        boxCoeff = 0.80
+    }
+
+    for (var i = 0; i < slideBoxes.length; i++) {
+        var box = slideBoxes[i];
+        var info = slideInfos[i];
+        var maxHeight = Math.round(carouselHeight * boxCoeff) + "px";
+        box.style.maxHeight = maxHeight;
+        info.style.maxHeight = Math.round(carouselHeight * boxCoeff * 0.62) + "px";
+        
+        // console.log("box:", Math.round(carouselHeight * boxCoeff) + "px", "info:", Math.round(carouselHeight * boxCoeff * 0.62) + "px");
+    }
+
+    
+}
+    
+
+
+window.addEventListener("load", function() {
+    adjustLayout();
+  });
+
+
+// Add event listener to adjust layout on window resize
+window.addEventListener('resize', function() {
+    adjustLayout();
+  });
+
+
+
+  

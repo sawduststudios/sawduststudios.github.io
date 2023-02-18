@@ -13,8 +13,7 @@ const aboutButtonClick = () => {
         aboutButton.innerHTML = "MÉNĚ INFO";
         setTimeout(function () {
             window.scrollTo(0, document.body.scrollHeight);
-            // console.log("scroll")
-        },100);
+        },50);
 
     }
 };

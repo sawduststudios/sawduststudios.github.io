@@ -1,66 +1,27 @@
-@media (min-width: 1900px) {
-    .carousel__slide-info {
-        max-height: 25vw;
+/* min height of a carousel*/
+@media (max-width: 1120px) {
+    .w-100 { /* Only present on slide bg images */
+        height: 450px;
+        object-fit: cover;        
     }
-}
 
-@media (max-width: 1899px) and (min-width: 1321px) {
-    .carousel__slide-info {
-        max-height: 24vw;
-    }
-}
-
-@media (max-width: 1320px) and (min-width: 1101px) {
-    .carousel__slide-info {
-        max-height: 16vw;
-    }
-}
-
-@media (max-width: 1100px) and (min-width: 1001px) {
     .carousel__slide-box {
-        max-height: 65%;
-    }
-
-    .carousel__slide-info {
-        max-height: 10vw;
+        top: calc(68px + 4vh);
+        left: 10vw;
+    
+        padding-bottom: 30px;
+    
+        width: calc(20vw + 300px);
+        min-width: 200px;
+        max-width: 800px;     
     }
 
     .carousel__slide-header {
-        font-size: 1.8rem;
+        font-size: 1.9rem;
     }
-
+    
     .carousel__slide-header.shown-detail {
         font-size: 1.8rem;
-    }
-}
-
-@media (max-width: 1000px) {
-    p.carousel__slide-info {
-        max-height: 9999px;
-    }
-
-    .carousel__slide-box{
-        position: relative;
-        width: 75vw;
-        /* max-height: 9999px; */
-        top: 0px;
-        left: 0px;
-        margin: auto;
-        margin-top: 30px;
-        padding: 0;
-        transform: scale(0.97);
-    }
-    .carousel__slide-box:hover {
-        transform: scale(1);
-    }
-
-    .carousel__slide-button {
-        position: relative;
-        margin-top: 20px;
-    }
-
-    .carousel__slide-author-section {
-        top: 300px;
     }
 }
 
@@ -133,23 +94,5 @@
 
     .spacer {
         display: none;
-    }
-}
-
-@media (max-width: 550px) {
-
-    .carousel__slide-box{
-        width: 85vw;
-        border: none;
-        background-color: rgba(0, 0, 0, 0);
-    }
-
-    .w-100 {
-        height: 300px;
-        object-fit: cover;        
-    }
-
-    .carousel__slide-author-section {
-        top: 270px;
     }
 }
