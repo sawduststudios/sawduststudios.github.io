@@ -1,9 +1,10 @@
 # TASKS
 
-- pomalejsi animace carouselu?
-- vyladit velkiost text boxu
-- filtrovani a swipe na mobilu
+- css styling pro mobile filter (dat pryc on hover a jen pridavat active class on click?)
+- pridat funkcionalitu mobile filter buttons
+- prepinani mezi filter bary
 
-- scroll bar on mozilla
+- vyladit velkiost text boxu
+- swipe na mobilu
 
  click doleva -> zapnuti filteru = fail FIXED???
