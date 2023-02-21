@@ -51,7 +51,7 @@ p.carousel__slide-info {
     overflow-y: auto;
     transition: max-height 0.5s, height 0.5s;
 
-    scrollbar-color: var(--yellow);
+    scrollbar-color: var(--yellow) rgb(0,0,0,0);
     scrollbar-width: thin;
     scrollbar-gutter: initial;
 }
