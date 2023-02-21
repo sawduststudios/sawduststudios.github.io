@@ -1,0 +1,43 @@
+/* #region  mobile filters */
+
+.mobile-filter-button {
+    margin: 8px;
+    overflow: hidden;
+    border-radius: 40px;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    transition: background-color 1s;
+}
+
+.mobile-filter-button:hover {
+    background-color: rgb(253,195,0,0.75);
+    cursor: pointer;
+}
+
+.mobile-filter-button:active {
+    background-color: salmon;
+}
+
+.mobile-filter-button-detail {
+    font-size: 14px;
+    font-weight: bold;
+    margin: 4px 7px 4px 0px;
+    /* padding: 1vh 0.4vw 1vh 1vw; */
+    padding: 5px 10px 5px 10px;
+    color: rgba(0, 0, 0, 1);
+}
+
+.mobile-filter-button.active-filter {
+    background-color: var(--yellow);
+    cursor: pointer;
+}
+
+.mobile-filter-button.active-filter .mobile-filter-button-detail {
+    max-width: 230px;
+    padding: 1vh 0.4vw 1vh 1vw;
+    color: rgba(0, 0, 0, 1);
+    visibility: visible;
+}
