@@ -62,47 +62,4 @@ function hideBoxDetail(slide, box, info, header, button) {
         boxDetailState(false);
     },100);
 }
-
-function adjustLayout() {
-    // Get the height of the carousel
-    var carouselHeight = document.getElementById("projectsCarousel").clientHeight;
-
-    console.log("Adjusting layout... Carousel height:", carouselHeight);
-  
-    // Set the max-height of the slide info box to 75% of the carousel height
-    var slideBoxes = document.getElementsByClassName("carousel__slide-box");
-    var slideInfos = document.getElementsByClassName("carousel__slide-info");
-
-    var boxCoeff = 0.70;
-    if (carouselHeight > 650) {
-        boxCoeff = 0.80
-    }
-
-    for (var i = 0; i < slideBoxes.length; i++) {
-        var box = slideBoxes[i];
-        var info = slideInfos[i];
-        var maxHeight = Math.round(carouselHeight * boxCoeff) + "px";
-        box.style.maxHeight = maxHeight;
-        info.style.maxHeight = Math.round(carouselHeight * boxCoeff * 0.62) + "px";
-        
-        // console.log("box:", Math.round(carouselHeight * boxCoeff) + "px", "info:", Math.round(carouselHeight * boxCoeff * 0.62) + "px");
-    }
-
-    
-}
-    
-
-
-window.addEventListener("load", function() {
-    adjustLayout();
-  });
-
-
-// Add event listener to adjust layout on window resize
-window.addEventListener('resize', function() {
-    adjustLayout();
-  });
-
-
-
   
