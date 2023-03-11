@@ -2,6 +2,7 @@
     --yellow: rgb(253, 195, 0);
     --blue: #162044;
     --info-text-color: #363636;
+    --transparent-grey: rgba(255, 255, 255, 0.65);
 
     --yellow-hover: darkorange;
     --yellow-active: white;
