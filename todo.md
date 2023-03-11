@@ -1,6 +1,9 @@
 # TASKS
 
 - vyladit velkiost text boxu
-- swipe na mobilu
+- vymyslet chování na mobilu
+- backround dolni sekce vylepsit
+
+- testovat v browserech
 
  click doleva -> zapnuti filteru = fail FIXED???
