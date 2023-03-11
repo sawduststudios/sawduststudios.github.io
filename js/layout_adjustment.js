@@ -1,3 +1,5 @@
+var isTouchDevice = 'ontouchstart' in document.documentElement;
+
 // Add event listener to adjust layout on load
 window.addEventListener("load", function() {
     adjustLayout();
@@ -14,8 +16,12 @@ function adjustLayout() {
 }
 
 
+
 function adjustNavbar() {
-    const widthThreshold = 768;
+    var widthThreshold = 768;
+    if (isTouchDevice) {
+      widthThreshold = 99999;
+    }
 
     const contentWidth = document.body.clientWidth;
 
