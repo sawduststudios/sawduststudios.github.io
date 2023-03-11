@@ -1,88 +1,16 @@
-// Get refs from HTML doc
 const myCarousel = document.getElementById('projectsCarousel')
-const slides = document.querySelectorAll('.carousel-item');
-const prevButton = document.querySelector('.carousel-control-prev')
-const nextButton = document.querySelector('.carousel-control-next')
-var slideIndex = 0
 
 const pcFilterContainer = document.querySelector('.carousel__filter-container');
 const pcFilterButtons = Array.from(pcFilterContainer.children);
 
 const mobileFilterButtons = document.querySelectorAll('.mobile-filter-button');
 
+const navbar = document.querySelector('.navbar');
+const navbarOffset = navbar.offsetTop;
+
 // represents the current filter from options 'tech', 'unnat', 'bio', 'socio', 'env';
 // filters that belong to this category have this class on them
 var currentFilter = '';
-
-
-$(document).ready(function() {  
-    // Add a click event listener to the "Next" carousel button
-    $('.carousel-control-next').on('click', function(event) {
-        goToNextSlide(event);
-    });
-    // Add a click event listener to the "Prev" carousel button
-    $('.carousel-control-prev').on('click', function(event) {
-        goToPrevSlide(event);
-    });
-  });
-
-
-function goToNextSlide() {
-    // Hide the project box detail if open
-    tryHideCurrentBox();
-    // Hide author detail if open
-    tryHideAuthorDetail();
-
-    // Check if the currentFilter string is empty
-    if (currentFilter.length > 0) {
-        // Find the next slide with the desired class
-        var $nextSlide = $('.carousel-item.active').nextAll('.carousel-item').filter('.' + currentFilter).first();
-
-        // If no slide with the desired class is found, loop back to the first slide with the desired class
-        if ($nextSlide.length === 0) {
-            $nextSlide = $('.carousel-item').siblings('.' + currentFilter).filter(':first');
-        }
-        if ($nextSlide.length > 0) {
-            // If a slide with the class was found, update the carousel to display it
-            $('#projectsCarousel').carousel($nextSlide.index());
-        } else {
-            // If no slide with the class was found, do normal next
-            $('#projectsCarousel').carousel('next');
-        }
-    } else {
-    // If the currentFilter string is empty, proceed to the next slide as usual
-    $('#projectsCarousel').carousel('next');
-    }
-}
-
-function goToPrevSlide() {
-    // Hide the project box detail if open
-    tryHideCurrentBox();
-    // Hide author detail if open
-    tryHideAuthorDetail();
-    
-    // Check if the currentFilter string is empty
-    if (currentFilter.length > 0) {
-        // Find the next slide with the desired class
-        var $prevSlide = $('.carousel-item.active').prevAll('.carousel-item').filter('.' + currentFilter).first();
-
-        // If no slide with the desired class is found, loop back to the first slide with the desired class
-        if ($prevSlide.length === 0) {
-            $prevSlide = $('.carousel-item').siblings('.' + currentFilter).last();
-        }
-        if ($prevSlide.length > 0) {
-            // If a slide with the class was found, update the carousel to display it
-            $('#projectsCarousel').carousel($prevSlide.index());
-        } else {
-            // If no slide with the class was found, do normal prev
-            $('#projectsCarousel').carousel('prev');
-        }
-    } else {
-    // If the currentFilter string is empty, proceed to the next slide as usual
-    $('#projectsCarousel').carousel('prev');
-    }
-}
-
 
 // ---- SELECTING A NEW FILTER ----
 
@@ -150,7 +78,6 @@ const setFilter = (button, index) => {
     else {
         // disable the previous active filter
         var activeFilters = document.querySelectorAll('.active-filter');
-        console.log("active filters:", activeFilters)
         activeFilters.forEach(element => {
             element.classList.remove('active-filter');
         });
@@ -172,25 +99,23 @@ mobileFilterButtons.forEach((button, index) => {
 })
 
 
-let touchStartX = null;
-let touchEndX = null;
-
-myCarousel.addEventListener('touchstart', function(e) {
-  touchStartX = e.touches[0].clientX;
-});
-
-myCarousel.addEventListener('touchend', function(e) {
-  touchEndX = e.changedTouches[0].clientX;
-  handleCarouselSwipe();
-});
-
-function handleCarouselSwipe() {
-  if (touchStartX > touchEndX && window.innerWidth < 768) {
-    goToNextSlide();
-  } else if (touchStartX < touchEndX && window.innerWidth < 768) {
-    goToPrevSlide();
+// function to handle the scroll event
+function handleScroll() {
+    // get the current scroll position
+    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    var carouselHeight = document.getElementById("projectsCarousel").clientHeight;
+  
+    // check if the user has scrolled past the navbar
+    if (scrollTop >= navbarOffset && scrollTop <= navbarOffset + carouselHeight/2) {
+      // add the fixed-top class to the navbar
+      navbar.classList.remove('d-none');
+      navbar.classList.add('fixed-top');
+    } else {
+      // remove the fixed-top class from the navbar
+      navbar.classList.remove('fixed-top');
+      navbar.classList.add('d-none');
+    }
   }
-
-  touchStartX = null;
-  touchEndX = null;
-}
+  
+  // add the scroll event listener
+  window.addEventListener('scroll', handleScroll);

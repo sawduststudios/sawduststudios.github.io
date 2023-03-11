@@ -18,17 +18,14 @@ function adjustLayout() {
 
 
 function adjustNavbar() {
-    var widthThreshold = 768;
-    if (isTouchDevice) {
-      widthThreshold = 99999;
-    }
-
     const contentWidth = document.body.clientWidth;
 
     const pcFilterContainer = document.querySelector('.carousel__filter-container');
     const mobileFilterContainer = document.querySelector('.navbar');
+
+    const widthThreshold = 768;
   
-    if (contentWidth < widthThreshold) {
+    if (contentWidth < widthThreshold || isTouchDevice) {
       pcFilterContainer.classList.add('d-none');
       mobileFilterContainer.classList.remove('d-none');
     } else {
@@ -41,7 +38,7 @@ function adjustCarouselBox() {
     // Get the height of the carousel
     var carouselHeight = document.getElementById("projectsCarousel").clientHeight;
 
-    console.log("Adjusting layout... Carousel height:", carouselHeight);
+    // console.log("Adjusting layout... Carousel height:", carouselHeight);
   
     // Set the max-height of the slide info box to 75% of the carousel height
     const slideBoxes = document.getElementsByClassName("carousel__slide-box");
