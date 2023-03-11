@@ -15,7 +15,7 @@ function adjustLayout() {
 
 
 function adjustNavbar() {
-    const widthThreshold = 800;
+    const widthThreshold = 768;
 
     const contentWidth = document.body.clientWidth;
 

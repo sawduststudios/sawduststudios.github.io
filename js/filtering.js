@@ -170,3 +170,27 @@ mobileFilterButtons.forEach((button, index) => {
         setFilter(button, index);
     })
 })
+
+
+let touchStartX = null;
+let touchEndX = null;
+
+myCarousel.addEventListener('touchstart', function(e) {
+  touchStartX = e.touches[0].clientX;
+});
+
+myCarousel.addEventListener('touchend', function(e) {
+  touchEndX = e.changedTouches[0].clientX;
+  handleCarouselSwipe();
+});
+
+function handleCarouselSwipe() {
+  if (touchStartX > touchEndX && window.innerWidth < 768) {
+    goToNextSlide();
+  } else if (touchStartX < touchEndX && window.innerWidth < 768) {
+    goToPrevSlide();
+  }
+
+  touchStartX = null;
+  touchEndX = null;
+}
