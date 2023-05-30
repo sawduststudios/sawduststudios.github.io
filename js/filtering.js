@@ -3,10 +3,7 @@ const myCarousel = document.getElementById('projectsCarousel')
 const pcFilterContainer = document.querySelector('.carousel__filter-container');
 const pcFilterButtons = Array.from(pcFilterContainer.children);
 
-const mobileFilterButtons = document.querySelectorAll('.mobile-filter-button');
-
-const navbar = document.querySelector('.navbar');
-const navbarOffset = navbar.offsetTop;
+const filterLabel = document.querySelector('.carousel__filter-label');
 
 // represents the current filter from options 'tech', 'unnat', 'bio', 'socio', 'env';
 // filters that belong to this category have this class on them
@@ -24,6 +21,30 @@ const activateFirstFilteredSlide = () => {
     }    
 }
 
+const classToName = (filterClass) => {
+    switch (filterClass) {
+        case 'tech':
+            return 'TECHNICKÉ VĚDY';
+        case 'unnat':
+            return 'VĚDY O NEŽIVÉ PŘÍRODĚ';
+        case 'bio':
+            return 'LÉKAŘSKÉ A BIOLOGICKÉ VĚDY';
+        case 'socio':
+            return 'SPOLEČENSKÉ A HUMANITNÍ VĚDY';
+        case 'env':
+            return 'ZEMĚDĚLSKÉ A BIOLOGICKO-ENVIROMENTÁLNÍ VĚDY';
+    }
+}
+
+const activateFilterLabel = (filterClass) => {
+    filterLabel.innerHTML = classToName(filterClass);
+    filterLabel.classList.add('label-active');
+}
+
+const deactivateFitlerLabel = () => {
+    filterLabel.classList.remove('label-active');    
+}
+
 // sets a new filter and loads the first slide in that category
 const setFilter = (button, index) => {
     console.log('filter button ' + index + ' clicked');
@@ -38,7 +59,6 @@ const setFilter = (button, index) => {
         
         // activate the new filter
         pcFilterButtons[index].classList.add('active-filter');
-        mobileFilterButtons[index].classList.add('active-filter');
         var filterClass = "";
         // select filter based on which button was clicked
         switch (index) {
@@ -59,6 +79,7 @@ const setFilter = (button, index) => {
                 break;
         }
         console.log('filterClass is: ' + filterClass);
+        activateFilterLabel(filterClass);
         if (currentFilter == filterClass) 
         { return; }
         currentFilter = filterClass;
@@ -70,13 +91,14 @@ const setFilter = (button, index) => {
             // curr_slide.classList.remove('active')
             // var new_slide = document.querySelector('.'+currentFilter)
             // new_slide.classList.add('active')
-            activateFirstFilteredSlide()
+            activateFirstFilteredSlide();
         }
         filteringState(true);
     } 
     // disabeling an active filter
     else {
         // disable the previous active filter
+        deactivateFitlerLabel();
         var activeFilters = document.querySelectorAll('.active-filter');
         activeFilters.forEach(element => {
             element.classList.remove('active-filter');
@@ -92,30 +114,24 @@ pcFilterButtons.forEach((button, index) => {
     })
 })
 
-mobileFilterButtons.forEach((button, index) => {
-    button.addEventListener('click', e => {
-        setFilter(button, index);
-    })
-})
-
 
 // function to handle the scroll event
-function handleScroll() {
-    // get the current scroll position
-    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-    var carouselHeight = document.getElementById("projectsCarousel").clientHeight;
+// function handleScroll() {
+//     // get the current scroll position
+//     const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+//     var carouselHeight = document.getElementById("projectsCarousel").clientHeight;
   
-    // check if the user has scrolled past the navbar
-    if (scrollTop >= navbarOffset && scrollTop <= navbarOffset + carouselHeight/2) {
-      // add the fixed-top class to the navbar
-      navbar.classList.remove('d-none');
-      navbar.classList.add('fixed-top');
-    } else {
-      // remove the fixed-top class from the navbar
-      navbar.classList.remove('fixed-top');
-      navbar.classList.add('d-none');
-    }
-  }
+//     // check if the user has scrolled past the navbar
+//     if (scrollTop >= navbarOffset && scrollTop <= navbarOffset + carouselHeight/2) {
+//       // add the fixed-top class to the navbar
+//       navbar.classList.remove('d-none');
+//       navbar.classList.add('fixed-top');
+//     } else {
+//       // remove the fixed-top class from the navbar
+//       navbar.classList.remove('fixed-top');
+//       navbar.classList.add('d-none');
+//     }
+//   }
   
   // add the scroll event listener
-  window.addEventListener('scroll', handleScroll);
+//   window.addEventListener('scroll', handleScroll);

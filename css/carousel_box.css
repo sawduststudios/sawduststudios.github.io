@@ -15,7 +15,7 @@
     border-radius: 5px;    
     
     z-index: 10;
-    transition: transform 0.2s height 0.5s;    
+    transition: transform 0.2s ease-in-out, all 0.5s ease-in-out;   
 }
 
 .carousel__slide-box:hover {
@@ -49,7 +49,7 @@ p.carousel__slide-info {
     /* max-height: 16vw; */
     /* max-height: 60%; */
     overflow-y: auto;
-    transition: max-height 0.5s, height 0.5s;
+    /* transition: max-height 0.5s, height 0.5s; */
 
     scrollbar-color: var(--yellow) rgb(0,0,0,0);
     scrollbar-width: thin;

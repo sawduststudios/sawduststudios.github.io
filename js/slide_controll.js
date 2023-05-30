@@ -2,15 +2,16 @@
 $(document).ready(function() {  
     // Add a click event listener to the "Next" carousel button
     $('.carousel-control-next').on('click', function(event) {
-        goToNextSlide(event);
+        goToNextSlide();
     });
     // Add a click event listener to the "Prev" carousel button
     $('.carousel-control-prev').on('click', function(event) {
-        goToPrevSlide(event);
+        goToPrevSlide();
     });
   });
 
 function goToNextSlide() {
+    console.log("Going to next slide...");
     // Hide the project box detail if open
     tryHideCurrentBox();
     // Hide author detail if open
@@ -39,6 +40,7 @@ function goToNextSlide() {
 }
 
 function goToPrevSlide() {
+    console.log("Going to next slide...");
     // Hide the project box detail if open
     tryHideCurrentBox();
     // Hide author detail if open
