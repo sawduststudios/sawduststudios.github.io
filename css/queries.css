@@ -26,6 +26,14 @@
         background-color: var(--yellow);
         cursor: pointer;
     }
+
+    .carousel__slide-box:hover {
+        transform: scale(1);
+    }
+
+    .carousel__slide-info-container {
+        transition: max-height 0.5s, height 0.5s;
+    }
 }
 
 /*phone carousel*/
