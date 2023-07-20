@@ -68,27 +68,43 @@ function goToPrevSlide() {
     }
 }
 
-
-let touchStartX = null;
-let touchEndX = null;
+var touchStartX = null;
+var touchEndX = null;
+var touchStartY = null;
+var touchEndY = null;
 
 myCarousel.addEventListener('touchstart', function(e) {
   touchStartX = e.touches[0].clientX;
+  touchStartY = e.touches[0].clientY;
 });
 
 myCarousel.addEventListener('touchend', function(e) {
   touchEndX = e.changedTouches[0].clientX;
+  touchEndY = e.changedTouches[0].clientY;
   handleCarouselSwipe();
 });
 
 function handleCarouselSwipe() {
-    var swipeThreshold = 100;
-  if (touchStartX > touchEndX && window.innerWidth < 768 && touchStartX - touchEndX > swipeThreshold) {
-    goToNextSlide();
-  } else if (touchStartX < touchEndX && window.innerWidth < 768 && touchEndX - touchStartX > swipeThreshold) {
-    goToPrevSlide();
+  var swipeThreshold = 200; // Adjust this value as needed
+
+  // Calculate the differences in X and Y coordinates
+  var deltaX = touchEndX - touchStartX;
+  var deltaY = touchEndY - touchStartY;
+
+  // Check if the swipe is horizontal and meets the swipe threshold
+  if (Math.abs(deltaX) > Math.abs(deltaY) && Math.abs(deltaX) > swipeThreshold && window.innerWidth < 768) 
+  {
+    if (deltaX > 0) {
+      goToPrevSlide();
+    } 
+    else {
+      goToNextSlide();
+    }
   }
 
+  // Reset touch variables
   touchStartX = null;
   touchEndX = null;
+  touchStartY = null;
+  touchEndY = null;
 }
