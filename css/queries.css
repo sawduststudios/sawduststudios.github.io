@@ -1,5 +1,10 @@
 /* phone filters */
 @media (max-width: 726px) {
+    .slide-content img {
+        height: 350px !important;
+        object-fit: cover;
+    }
+
     .carousel__filter-button:hover .carousel__filter-button-detail {
         max-width: 0px;
         padding-left: 3px;
@@ -168,7 +173,7 @@
 
 /* min height of a carousel*/
 @media (max-width: 1120px) {
-    .w-100 { /* Only present on slide bg images */
+    .slide-content img {
         height: 450px;
         object-fit: cover;        
     }
@@ -194,7 +199,7 @@
 }
 
 /* research section */
-@media (max-width: 1000px) {
+@media (max-width: 1000px)  {
     .body,
     .carousel,
     .carousel__slide,
