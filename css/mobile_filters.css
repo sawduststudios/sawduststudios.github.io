@@ -1,7 +1,9 @@
 /* #region  mobile filters */
 
 .navbar {
-    background-color: var(--transparent-grey);
+    /* background-color: var(--transparent-grey);
+     */
+     background-color: white;
 }
 
 .mobile-filter-button {

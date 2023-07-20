@@ -1,4 +1,5 @@
 var isTouchDevice = 'ontouchstart' in document.documentElement;
+const bochChangeWidthThreshold = 1040;
 
 // Add event listener to adjust layout on load
 window.addEventListener("load", function() {
@@ -12,7 +13,7 @@ window.addEventListener('resize', function() {
 
 function adjustLayout() {
     adjustCarouselBox();
-    adjustNavbar();
+    // adjustNavbar();
 }
 
 
@@ -37,6 +38,9 @@ function adjustNavbar() {
 function adjustCarouselBox() {
     // Get the height of the carousel
     var carouselHeight = document.getElementById("projectsCarousel").clientHeight;
+    // Get the width of the screen
+    var screenWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+
 
     // console.log("Adjusting layout... Carousel height:", carouselHeight);
   
@@ -53,9 +57,13 @@ function adjustCarouselBox() {
         var box = slideBoxes[i];
         var info = slideInfos[i];
         var maxHeight = Math.round(carouselHeight * boxCoeff) + "px";
-        box.style.maxHeight = maxHeight;
-        info.style.maxHeight = Math.round(carouselHeight * boxCoeff * 0.62) + "px";
-        
+        if (screenWidth > bochChangeWidthThreshold) {
+          box.style.maxHeight = maxHeight;
+          info.style.maxHeight = Math.round(carouselHeight * boxCoeff * 0.62) + "px";
+      } else {
+          box.style.maxHeight = "none";
+          info.style.maxHeight = "none";
+      }
         // console.log("box:", Math.round(carouselHeight * boxCoeff) + "px", "info:", Math.round(carouselHeight * boxCoeff * 0.62) + "px");
     }    
 }
