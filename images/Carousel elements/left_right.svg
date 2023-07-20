@@ -102,5 +102,25 @@
          style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:'Exo 2';-inkscape-font-specification:'Exo 2 Bold';fill:#fdd139;fill-opacity:1;stroke-width:1.00524"
          x="71.394379"
          y="138.50275">i</tspan></text>
+    <circle
+       style="fill:#fdd139;fill-opacity:1;stroke-width:0.529167"
+       id="circle303"
+       cx="135.01614"
+       cy="134.30646"
+       r="11.887096"
+       inkscape:export-filename="info2.png"
+       inkscape:export-xdpi="53.419273"
+       inkscape:export-ydpi="53.419273" />
+    <text
+       xml:space="preserve"
+       style="font-size:18.7645px;font-family:'Exo 2';-inkscape-font-specification:'Exo 2, ';fill:#162044;fill-opacity:1;stroke-width:1.00524"
+       x="132.42664"
+       y="140.98662"
+       id="text307"><tspan
+         sodipodi:role="line"
+         id="tspan305"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:'Exo 2';-inkscape-font-specification:'Exo 2 Bold';fill:#162044;fill-opacity:1;stroke-width:1.00524"
+         x="132.42664"
+         y="140.98662">i</tspan></text>
   </g>
 </svg>

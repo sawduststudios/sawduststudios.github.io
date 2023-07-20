@@ -34,6 +34,50 @@
     .carousel__slide-info-container {
         transition: max-height 0.5s, height 0.5s;
     }
+
+    /* Projec author section */
+    .carousel__slide-author-section {
+        position: relative;
+        padding: 20px;
+        padding-bottom: 0px;
+        margin-bottom: 0px;
+        /* transform: translate(-100%, -100%);     */
+        overflow-y: visible;
+    }
+    
+    .carousel__slide-author-section .icon {
+        position: relative;
+        margin-left: 6vw;
+        margin-top: 10px;
+        transform: translate(-100%, -100%);
+        transform: scale(1);
+        background-image: url(../images/Carousel\ elements/info2.png);
+    }
+
+    .carousel__slide-author-section .icon:hover {
+        transform: scale(1);
+    }
+
+    .carousel__slide-author-section .box {
+        opacity: 0;
+        position: relative;
+        width: 300px;
+        height: 0px;
+        max-height: 100px;
+        transform: translateX(-150%);
+        transition: all 0.3s ease-in-out;
+        pointer-events: none;
+    }
+    
+    .carousel__slide-author-section .box.show-info {
+        opacity: 1;
+        max-height: 500px;
+        transform: translateX(0%);
+        margin: auto;
+        margin-top: 10px;
+        height: auto;
+        pointer-events: all;
+    }
 }
 
 /*phone carousel*/
@@ -103,7 +147,7 @@
     }
 
     .carousel__slide-author-section .box {
-        opacity: 1;
+        /* opacity: 1; */
         border-radius: 8px;
         margin: 0;
         padding: 8px;
