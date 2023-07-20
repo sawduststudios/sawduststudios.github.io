@@ -82,9 +82,10 @@ myCarousel.addEventListener('touchend', function(e) {
 });
 
 function handleCarouselSwipe() {
-  if (touchStartX > touchEndX && window.innerWidth < 768) {
+    var swipeThreshold = 100;
+  if (touchStartX > touchEndX && window.innerWidth < 768 && touchStartX - touchEndX > swipeThreshold) {
     goToNextSlide();
-  } else if (touchStartX < touchEndX && window.innerWidth < 768) {
+  } else if (touchStartX < touchEndX && window.innerWidth < 768 && touchEndX - touchStartX > swipeThreshold) {
     goToPrevSlide();
   }
 
