@@ -37,6 +37,7 @@ function tryHideCurrentBox() {
     var button = slide.querySelector('.carousel__slide-button');
 
     if (header.classList.contains("shown-detail")) {
+        console.log("Auto hiding box detail");
         hideBoxDetail(slide, box, info, header, button);
     }
 }
