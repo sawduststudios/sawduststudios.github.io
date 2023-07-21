@@ -28,7 +28,7 @@ function filteringOnState(newState) {
 
 function updateCarouselSlidingState() {
     var shouldSlide = !(boxDetailOn || authorInfoOn || filterOn);
-
+    console.log("BoxOn:" + boxDetailOn + ", authorOn:" + authorInfoOn + ", filterOn:" + filterOn + " --> shouldSlide:" + shouldSlide);
     if (shouldSlide) {
         startCarousel();
     }
@@ -38,7 +38,7 @@ function updateCarouselSlidingState() {
 }
 
 $(document).ready(function() {
-    // Set the cycle interval on the carousel to 7 seconds
+    // Set the cycle interval on the carousel
     carousel.carousel({
         interval: slideInterval
     });
@@ -48,12 +48,18 @@ $(document).ready(function() {
 
 function stopCarousel() {
     console.log("Carousel STOP sliding...");
-    carousel.carousel('pause');
+    carousel.carousel({
+        pause: true,
+        interval: false
+    });
 }
 
 function startCarousel() {
     console.log("Carousel START sliding...");
-    carousel.carousel('cycle');
+    carousel.carousel({
+        pause: false,
+        interval: slideInterval
+    });
 }
 
 function allowStartCarousel() {
