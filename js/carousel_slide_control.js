@@ -1,7 +1,7 @@
 // Find the Bootstrap carousel with id "projectsCarousel"
 var carousel = $('#projectsCarousel');
 // The slide interval for the carousel
-const slideInterval = 5000;
+const slideInterval = 7000;
 
 // Flags to represent the state
 var boxDetailOn = false;
@@ -54,6 +54,10 @@ function stopCarousel() {
 function startCarousel() {
     // console.log("Carousel START sliding...");
     carousel.carousel('cycle');
+}
+
+function allowStartCarousel() {
+    updateCarouselSlidingState();
 }
   
 // innitial slide to show that you can swipe
