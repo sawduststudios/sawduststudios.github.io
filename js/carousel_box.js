@@ -47,7 +47,8 @@ function showBoxDetail(slide, box, info, header, button) {
     info.innerHTML = detail_text;
     box.style.maxHeight = box.scrollHeight + "px";
     header.classList.add("shown-detail");
-    $("#projectsCarousel").carousel("pause");
+    // $("#projectsCarousel").carousel("pause");
+    // stopCarousel();
     button.innerHTML = "<p>MÉNĚ INFO</p>";
     boxDetailState(true);
 }
