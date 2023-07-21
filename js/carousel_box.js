@@ -63,6 +63,17 @@ function hideBoxDetail(slide, box, info, header, button) {
         // $("#projectsCarousel").carousel("cycle");
         button.innerHTML = "<p>VÍCE INFO</p>";
         boxDetailOnState(false);
+
+        // Check if the box position is set to "relative"
+        const boxPosition = window.getComputedStyle(box).position;
+        if (boxPosition === "relative") {
+            // Smooth scroll to the top of the page
+            const scrollToOptions = {
+                top: 100,
+                behavior: "smooth"
+            };
+            window.scrollTo(scrollToOptions);
+        }
     },100);
 }
   

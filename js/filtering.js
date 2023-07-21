@@ -32,7 +32,7 @@ const classToName = (filterClass) => {
         case 'socio':
             return 'SPOLEČENSKÉ A HUMANITNÍ VĚDY';
         case 'env':
-            return 'ZEMĚDĚLSKÉ A BIOLOGICKO-ENVIROMENTÁLNÍ VĚDY';
+            return 'ZEMĚDĚLSKÉ A BIOLOGICKO-<br>ENVIROMENTÁLNÍ VĚDY';
     }
 }
 
@@ -80,6 +80,7 @@ const setFilter = (button, index) => {
         }
         console.log('filterClass is: ' + filterClass);
         activateFilterLabel(filterClass);
+        setTimeout(function () { deactivateFitlerLabel(); }, 3000);
         if (currentFilter == filterClass) 
         { return; }
         currentFilter = filterClass;
@@ -88,12 +89,9 @@ const setFilter = (button, index) => {
         var curr_slide = document.querySelector('.active')
         if (!(curr_slide.classList.contains(currentFilter)))
         {
-            // curr_slide.classList.remove('active')
-            // var new_slide = document.querySelector('.'+currentFilter)
-            // new_slide.classList.add('active')
             activateFirstFilteredSlide();
         }
-        filteringState(true);
+        filteringOnState(true);
     } 
     // disabeling an active filter
     else {
@@ -104,7 +102,7 @@ const setFilter = (button, index) => {
             element.classList.remove('active-filter');
         });
         currentFilter = '';
-        filteringState(false);
+        filteringOnState(false);
     }
 }
 
@@ -113,25 +111,3 @@ pcFilterButtons.forEach((button, index) => {
         setFilter(button, index);
     })
 })
-
-
-// function to handle the scroll event
-// function handleScroll() {
-//     // get the current scroll position
-//     const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-//     var carouselHeight = document.getElementById("projectsCarousel").clientHeight;
-  
-//     // check if the user has scrolled past the navbar
-//     if (scrollTop >= navbarOffset && scrollTop <= navbarOffset + carouselHeight/2) {
-//       // add the fixed-top class to the navbar
-//       navbar.classList.remove('d-none');
-//       navbar.classList.add('fixed-top');
-//     } else {
-//       // remove the fixed-top class from the navbar
-//       navbar.classList.remove('fixed-top');
-//       navbar.classList.add('d-none');
-//     }
-//   }
-  
-  // add the scroll event listener
-//   window.addEventListener('scroll', handleScroll);
