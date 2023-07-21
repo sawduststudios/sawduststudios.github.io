@@ -15,3 +15,4 @@
 
 - sliding se pustí automaticky už i na mobilu
 - ALE nezastaví se pří zobrazení slide details apod.
+https://mdbootstrap.com/support/jquery/carousel-pause-for-onclick-events-inside-carousel-does-not-work-with-gestures/

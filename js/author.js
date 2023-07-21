@@ -19,6 +19,7 @@ function tryHideAuthorDetail() {
     var activeSlide = document.querySelector('.active');
     var theBox = activeSlide.querySelector('.carousel__slide-author-section .box');
     if (theBox.classList.contains("show-info")) {
+        console.log("Auto hiding author detail...");
         authorDetailOff(theBox);
     }
 }
