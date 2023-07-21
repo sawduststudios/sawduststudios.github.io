@@ -12,3 +12,6 @@
  notes:
 
 - cycling carouselu -> carousel_slide_controls.js line 42
+
+- sliding se pustí automaticky už i na mobilu
+- ALE nezastaví se pří zobrazení slide details apod.

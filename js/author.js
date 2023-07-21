@@ -25,11 +25,11 @@ function tryHideAuthorDetail() {
 
 function authorDetailOn(infoBox) {
     infoBox.classList.add("show-info");
-    authorInfoState(true);
+    authorInfoOnState(true);
 }
 
 function authorDetailOff(infoBox) {
     infoBox.classList.remove("show-info");
-    authorInfoState(false);
+    authorInfoOnState(false);
 }
 

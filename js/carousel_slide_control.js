@@ -8,19 +8,19 @@ var boxDetailOn = false;
 var authorInfoOn = false;
 var filterOn = false;
 
-function boxDetailState(newState) {
+function boxDetailOnState(newState) {
     // console.log("BOX state changed", newState);
     boxDetailOn = newState;
     updateCarouselSlidingState();
 }
 
-function authorInfoState(newState) {
+function authorInfoOnState(newState) {
     // console.log("AUTHOR state changed", newState);
     authorInfoOn = newState;
     updateCarouselSlidingState();
 }
 
-function filteringState(newState) {
+function filteringOnState(newState) {
     // console.log("FILTER state changed", newState);
     filterOn = newState;
     updateCarouselSlidingState();
@@ -47,12 +47,12 @@ $(document).ready(function() {
   });
 
 function stopCarousel() {
-    // console.log("Carousel STOP sliding...");
+    console.log("Carousel STOP sliding...");
     carousel.carousel('pause');
 }
 
 function startCarousel() {
-    // console.log("Carousel START sliding...");
+    console.log("Carousel START sliding...");
     carousel.carousel('cycle');
 }
 

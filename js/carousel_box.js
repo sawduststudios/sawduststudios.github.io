@@ -50,7 +50,7 @@ function showBoxDetail(slide, box, info, header, button) {
     // $("#projectsCarousel").carousel("pause");
     // stopCarousel();
     button.innerHTML = "<p>MÉNĚ INFO</p>";
-    boxDetailState(true);
+    boxDetailOnState(true);
 }
 
 function hideBoxDetail(slide, box, info, header, button) {
@@ -62,7 +62,7 @@ function hideBoxDetail(slide, box, info, header, button) {
         header.classList.remove("shown-detail");
         // $("#projectsCarousel").carousel("cycle");
         button.innerHTML = "<p>VÍCE INFO</p>";
-        boxDetailState(false);
+        boxDetailOnState(false);
     },100);
 }
   
