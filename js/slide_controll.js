@@ -76,12 +76,14 @@ var touchEndY = null;
 myCarousel.addEventListener('touchstart', function(e) {
   touchStartX = e.touches[0].clientX;
   touchStartY = e.touches[0].clientY;
+  stopCarousel();
 });
 
 myCarousel.addEventListener('touchend', function(e) {
   touchEndX = e.changedTouches[0].clientX;
   touchEndY = e.changedTouches[0].clientY;
   handleCarouselSwipe();
+  allowStartCarousel();
 });
 
 function handleCarouselSwipe() {
