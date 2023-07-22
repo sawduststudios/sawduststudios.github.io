@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generator: Adobe Illustrator 25.0.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+
+<svg
+   version="1.1"
+   id="Layer_1"
+   x="0px"
+   y="0px"
+   viewBox="0 0 534.8 189.6"
+   style="enable-background:new 0 0 534.8 189.6;"
+   xml:space="preserve"
+   sodipodi:docname="levy_spodni_roh2.svg"
+   inkscape:version="1.2.1 (9c6d41e410, 2022-07-14)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"><defs
+   id="defs14"><inkscape:path-effect
+     effect="bspline"
+     id="path-effect499"
+     is_visible="true"
+     lpeversion="1"
+     weight="33.333333"
+     steps="2"
+     helper_size="0"
+     apply_no_weight="true"
+     apply_with_weight="true"
+     only_selected="false" /></defs><sodipodi:namedview
+   id="namedview12"
+   pagecolor="#ffffff"
+   bordercolor="#000000"
+   borderopacity="0.25"
+   inkscape:showpageshadow="2"
+   inkscape:pageopacity="0.0"
+   inkscape:pagecheckerboard="0"
+   inkscape:deskcolor="#d1d1d1"
+   showgrid="false"
+   inkscape:zoom="1.422027"
+   inkscape:cx="287.61761"
+   inkscape:cy="180.02471"
+   inkscape:window-width="1920"
+   inkscape:window-height="1017"
+   inkscape:window-x="-8"
+   inkscape:window-y="-8"
+   inkscape:window-maximized="1"
+   inkscape:current-layer="Layer_1" />
+<style
+   type="text/css"
+   id="style2">
+	.st0{fill:url(#SVGID_1_);}
+</style>
+<linearGradient
+   id="SVGID_1_"
+   gradientUnits="userSpaceOnUse"
+   x1="-4497.1592"
+   y1="-1787.4028"
+   x2="-5098.8066"
+   y2="-1235.8917"
+   gradientTransform="matrix(0,-0.3186977,-1.0869199,0,-1275.3614,-1456.8612)">
+	<stop
+   offset="0"
+   style="stop-color:#595A5C"
+   id="stop4" />
+	<stop
+   offset="1"
+   style="stop-color:#FFFFFF"
+   id="stop6" />
+</linearGradient>
+<path
+   class="st0"
+   d="M 621.91917,188.60373 C 322.30754,163.29873 465.20103,86.346677 327.18683,49.944824 197.88565,15.824567 39.541071,38.640541 0.62292607,-8.0284969 V 188.60373 Z"
+   id="path9"
+   style="fill:url(#SVGID_1_);stroke-width:1.09765" />
+</svg>

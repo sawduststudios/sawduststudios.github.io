@@ -41,12 +41,11 @@
     }
 
     /* Projec author section */
-    .carousel__slide-author-section {
+    /* .carousel__slide-author-section {
         position: relative;
         padding: 20px;
         padding-bottom: 0px;
         margin-bottom: 0px;
-        /* transform: translate(-100%, -100%);     */
         overflow-y: visible;
     }
     
@@ -82,7 +81,7 @@
         margin-top: 10px;
         height: auto;
         pointer-events: all;
-    }
+    } */
 }
 
 /*phone carousel*/
@@ -121,12 +120,7 @@
         transition: transform 0.2s height 0.5s;    
     }
 
-    .carousel__slide-author-section {
-        z-index: 20;
-        position: relative;
-        color: white;
-        transform: translate(0%, 0%);    
-    }
+    
 
     p.carousel__slide-info {
         height: fit-content;
@@ -141,7 +135,7 @@
         display: none;
     }
 
-    .carousel__slide-author-section {
+    /* .carousel__slide-author-section {
         z-index: 20;
         position: relative;
         top: 0;
@@ -152,62 +146,21 @@
     }
 
     .carousel__slide-author-section .box {
-        /* opacity: 1; */
         border-radius: 8px;
         margin: 0;
         padding: 8px;
-        /* transform: translateX(-100%); */
         pointer-events: none;
     }
 
     .carousel__slide-author-section .icon {
         position: absolute;
-        /* padding: 10px 17px; */
         top: 0%;
         left: 0%;
         transition: 0.2s;
         width: 30px;
         height: 30px;
-    }
-}
-
-/* min height of a carousel*/
-@media (max-width: 1120px) {
-    .slide-content img {
-        height: 450px;
-        object-fit: cover;        
-    }
-
-    /* .carousel__slide-box {
-        top: calc(68px + 4vh);
-        left: 10vw;
-    
-        padding-bottom: 30px;
-    
-        width: calc(20vw + 300px);
-        min-width: 200px;
-        max-width: 800px;     
     } */
 
-    .carousel__slide-header {
-        font-size: 1.9rem;
-    }
-    
-    .carousel__slide-header.shown-detail {
-        font-size: 1.8rem;
-    }
-}
-
-/* research section */
-@media (max-width: 1000px)  {
-    .body,
-    .carousel,
-    .carousel__slide,
-    .carousel__slide-list {
-        max-width: 100vw;
-        min-width: none;
-        background-color: var(--blue);
-    }
     .research-section img {
         display: none;
     }
@@ -267,5 +220,48 @@
 
     .spacer {
         display: none;
+    }
+
+    #pravy-horni-bg {
+        display: none;
+    }
+}
+
+/* min height of a carousel*/
+@media (max-width: 1120px) {
+    .slide-content img {
+        height: 450px;
+        object-fit: cover;        
+    }
+
+    /* .carousel__slide-box {
+        top: calc(68px + 4vh);
+        left: 10vw;
+    
+        padding-bottom: 30px;
+    
+        width: calc(20vw + 300px);
+        min-width: 200px;
+        max-width: 800px;     
+    } */
+
+    .carousel__slide-header {
+        font-size: 1.9rem;
+    }
+    
+    .carousel__slide-header.shown-detail {
+        font-size: 1.8rem;
+    }
+}
+
+/* research section */
+@media (max-width: 1000px)  {
+    .body,
+    .carousel,
+    .carousel__slide,
+    .carousel__slide-list {
+        max-width: 100vw;
+        min-width: none;
+        background-color: var(--blue);
     }
 }

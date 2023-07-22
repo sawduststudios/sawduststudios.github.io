@@ -4,7 +4,8 @@ html, body {
 
 .text-section {
     display: block;
-    background-image: url(../images/backgrounds/levy_spodni_roh.svg), url(../images/backgrounds/pravy_horni_roh.svg);
+    /* background-image: url(../images/backgrounds/levy_spodni_roh.svg), url(../images/backgrounds/pravy_horni_roh.svg); */
+    background-image: url(../images/backgrounds/levy_spodni_roh.svg);
     background-repeat: no-repeat, no-repeat;
     background-position: bottom left, top right;
     background-size: contain, contain;   
@@ -15,6 +16,15 @@ html, body {
     background-size: cover; */
 
     overflow: hidden;
+}
+
+#pravy-horni-bg {
+    position: absolute; 
+    top: 0; 
+    right: 0;
+    height: 100vh; 
+    pointer-events: none; 
+    z-index: 1;
 }
 
 /* #region  research section */

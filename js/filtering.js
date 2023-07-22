@@ -52,7 +52,7 @@ const setFilter = (button, index) => {
     if (!button.classList.contains('active-filter')) {
         // disable the previous active filter
         var activeFilters = document.querySelectorAll('.active-filter');
-        console.log("active filters:", activeFilters)
+        // console.log("active filters:", activeFilters)
         activeFilters.forEach(element => {
             element.classList.remove('active-filter');
         });
@@ -84,9 +84,9 @@ const setFilter = (button, index) => {
         if (currentFilter == filterClass) 
         { return; }
         currentFilter = filterClass;
-        console.log("Current filter is:", currentFilter)
+        console.log("Current filter is:", currentFilter);
         // if the current slide is not in the required category
-        var curr_slide = document.querySelector('.active')
+        var curr_slide = document.querySelector('.active');
         if (!(curr_slide.classList.contains(currentFilter)))
         {
             activateFirstFilteredSlide();

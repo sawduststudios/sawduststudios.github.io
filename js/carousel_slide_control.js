@@ -48,10 +48,10 @@ $(document).ready(function() {
   });
 
 function stopCarousel() {
-    console.log("Carousel STOP sliding...");
-    $('.carousel').carousel({
-        interval: 999999
-    });
+    // console.log("Carousel STOP sliding...");
+    // $('.carousel').carousel({
+    //     interval: 999999
+    // });
     carousel.carousel('pause');
 
     // carousel.carousel({
@@ -61,10 +61,10 @@ function stopCarousel() {
 }
 
 function startCarousel() {
-    console.log("Carousel START sliding...");
-    $('.carousel').carousel({
-        interval: slideInterval
-    });
+    // console.log("Carousel START sliding...");
+    // $('.carousel').carousel({
+    //     interval: slideInterval
+    // });
     carousel.carousel('cycle');
 }
 

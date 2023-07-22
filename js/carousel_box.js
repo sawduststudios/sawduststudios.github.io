@@ -70,8 +70,8 @@ function hideBoxDetail(slide, box, info, header, button) {
         if (boxPosition === "relative") {
             // Smooth scroll to the top of the page
             const scrollToOptions = {
-                top: 100,
-                behavior: "smooth"
+                top: 250,
+                behavior: "auto"
             };
             window.scrollTo(scrollToOptions);
         }

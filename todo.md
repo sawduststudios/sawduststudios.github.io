@@ -1,5 +1,11 @@
 # TASKS
 
+- TODO: predelat html slide author section u vsech slides
+- horni roh bg sladit na panacka
+- spodni roh bg
+- bg css overall
+- nemizet carousel buttons na pc! - dat je taky do image divu?
+
 - vyladit velkiost text boxu
 - backround dolni sekce vylepsit
 
