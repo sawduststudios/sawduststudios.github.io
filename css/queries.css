@@ -236,6 +236,10 @@
         background-color: var(--blue);
     }
 
+    #levy-dolni-bg {
+        display: none;
+    }
+
     .about-text {
         color: white;
     }
