@@ -93,10 +93,6 @@
     .carousel__slide-box {
         position: relative;
     }
-
-    .carousel__slide-author-section {
-        position: relative;
-    }
 }
 
 @media (max-width: 1040px) {
