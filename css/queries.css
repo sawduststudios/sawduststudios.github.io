@@ -86,12 +86,23 @@
 
 /*phone carousel*/
 @media (max-width: 726px) {
-    .carousel-control-next, .carousel-control-prev {
-        display: none;
-    }
-
     .carousel__slide-box {
         position: relative;
+    }
+
+    .carousel-control-next-icon, .carousel-control-prev-icon {
+        position: absolute;
+        top: 175px;
+        transform: translateY(-50%);
+        scale: 0.9;
+    }
+}
+
+@media (max-width: 1040px) and (min-width: 726px) {
+    .carousel-control-next-icon, .carousel-control-prev-icon {
+        position: absolute;
+        top: 225px;
+        transform: translateY(-50%);
     }
 }
 
@@ -114,9 +125,11 @@
         border: 0px; 
         z-index: 10;
         transition: transform 0.2s height 0.5s;    
-    }
-
+    }   
     
+    .carousel__slide-box:hover {
+        transform: scale(1);
+    }
 
     p.carousel__slide-info {
         height: fit-content;
@@ -126,9 +139,22 @@
         scrollbar-width: thin;
         scrollbar-gutter: initial;
     }
+
+    .carousel-control-next-icon {
+        margin-right: 20px;
+    }
+    .carousel-control-prev-icon {
+        margin-left: 20px;
+    }
+
+    .carousel-control-prev:hover .carousel-control-prev-icon {
+        background-image: url(../images/Carousel\ elements/left_hover.png);
+        transform: translate(-50%, -50%);
+    }
     
-    .carousel-control-next, .carousel-control-prev {
-        display: none;
+    .carousel-control-next:hover .carousel-control-next-icon {
+        background-image: url(../images/Carousel\ elements/right_hover.png);
+        transform: translate(+50%, -50%);
     }
 
     /* .carousel__slide-author-section {
@@ -259,5 +285,11 @@
         max-width: 100vw;
         min-width: none;
         background-color: var(--blue);
+    }
+}
+
+@media (max-width: 500px)  {
+    .carousel-control-next, .carousel-control-prev {
+        display: none;
     }
 }
