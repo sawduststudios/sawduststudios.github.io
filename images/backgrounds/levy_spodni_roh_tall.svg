@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generator: Adobe Illustrator 25.0.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+
+<svg
+   version="1.1"
+   id="Layer_1"
+   x="0px"
+   y="0px"
+   viewBox="0 0 534.8 189.6"
+   style="enable-background:new 0 0 534.8 189.6;"
+   xml:space="preserve"
+   sodipodi:docname="levy_spodni_roh_tall.svg"
+   inkscape:version="1.2.1 (9c6d41e410, 2022-07-14)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"><defs
+   id="defs14"><linearGradient
+     inkscape:collect="always"
+     id="linearGradient1341"><stop
+       style="stop-color:#ffffff;stop-opacity:1;"
+       offset="0"
+       id="stop1337" /><stop
+       style="stop-color:#ffffff;stop-opacity:0;"
+       offset="1"
+       id="stop1339" /></linearGradient><linearGradient
+     inkscape:collect="always"
+     xlink:href="#linearGradient1341"
+     id="linearGradient1343"
+     x1="339.65601"
+     y1="342.4689"
+     x2="420.52649"
+     y2="123.06377"
+     gradientUnits="userSpaceOnUse" /></defs><sodipodi:namedview
+   id="namedview12"
+   pagecolor="#ffffff"
+   bordercolor="#000000"
+   borderopacity="0.25"
+   inkscape:showpageshadow="2"
+   inkscape:pageopacity="0.0"
+   inkscape:pagecheckerboard="0"
+   inkscape:deskcolor="#d1d1d1"
+   showgrid="false"
+   inkscape:zoom="1.422027"
+   inkscape:cx="236.28243"
+   inkscape:cy="198.30847"
+   inkscape:window-width="1920"
+   inkscape:window-height="1017"
+   inkscape:window-x="-8"
+   inkscape:window-y="-8"
+   inkscape:window-maximized="1"
+   inkscape:current-layer="Layer_1" />
+<style
+   type="text/css"
+   id="style2">
+	.st0{fill:url(#SVGID_1_);}
+</style>
+<linearGradient
+   id="SVGID_1_"
+   gradientUnits="userSpaceOnUse"
+   x1="-4497.1592"
+   y1="-1787.4028"
+   x2="-5098.8066"
+   y2="-1235.8917"
+   gradientTransform="matrix(0,-0.3073,-0.9356,0,-1098.3431,-1335.8373)">
+	<stop
+   offset="0"
+   style="stop-color:#595A5C"
+   id="stop4" />
+	<stop
+   offset="1"
+   style="stop-color:#FFFFFF"
+   id="stop6" />
+</linearGradient>
+<g
+   id="g321"
+   transform="translate(0,-61.180273)"
+   inkscape:export-filename="levy_dolni_tall_export_bg.png"
+   inkscape:export-xdpi="96"
+   inkscape:export-ydpi="96"><rect
+     style="fill:url(#linearGradient1343);fill-opacity:1;stroke:none;stroke-width:10.9007"
+     id="rect432"
+     width="534.79999"
+     height="201.12137"
+     x="1.1186899e-08"
+     y="250.34686" /><path
+     class="st0"
+     d="m 534.8,250.78027 c -257.9,-24.4 -134.9,-98.6 -253.7,-133.7 C 169.8,84.180275 33.5,106.18027 0,61.180275 V 250.78027 Z"
+     id="path9"
+     style="fill:url(#SVGID_1_)" /></g>
+</svg>

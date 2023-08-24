@@ -21,7 +21,7 @@
 .carousel-control-prev-icon {
     background-image: url(../images/Carousel\ elements/left.png);
     transform: translateX(-25%);
-    transition: transform 0.5s;
+    transition: transform 0.5s ease-out;
 }
 .carousel-control-prev:hover .carousel-control-prev-icon {
     background-image: url(../images/Carousel\ elements/left_hover.png);
@@ -31,7 +31,7 @@
 .carousel-control-next-icon {
     background-image: url(../images/Carousel\ elements/right.png);
     transform: translateX(+25%);
-    transition: transform 0.5s;
+    transition: transform 0.5s ease-out;
 }
 .carousel-control-next:hover .carousel-control-next-icon {
     background-image: url(../images/Carousel\ elements/right_hover.png);
