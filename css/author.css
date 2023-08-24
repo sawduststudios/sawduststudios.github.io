@@ -1,5 +1,9 @@
 /* #region  carousel author section */
 
+.upper-slide-content{
+    position: relative;
+}
+
 .carousel__slide-author-section {
     z-index: 20;
     position: absolute;

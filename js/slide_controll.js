@@ -12,6 +12,7 @@ $(document).ready(function() {
 
 function goToNextSlide() {
     console.log("Going to next slide...");
+    console.log("Current filter is:", currentFilter);
     // Hide the project box detail if open
     tryHideCurrentBox();
     // Hide author detail if open
@@ -20,15 +21,16 @@ function goToNextSlide() {
     // Check if the currentFilter string is empty
     if (currentFilter.length > 0) {
         // Find the next slide with the desired class
-        var $nextSlide = $('.carousel-item.active').nextAll('.carousel-item').filter('.' + currentFilter).first();
+        var nextSlide = $('.carousel-item.active').nextAll('.carousel-item').filter('.' + currentFilter).first();
+        console.log("Next slides:", nextSlide);
 
         // If no slide with the desired class is found, loop back to the first slide with the desired class
-        if ($nextSlide.length === 0) {
-            $nextSlide = $('.carousel-item').siblings('.' + currentFilter).filter(':first');
+        if (nextSlide.length === 0) {
+            nextSlide = $('.carousel-item').siblings('.' + currentFilter).filter(':first');
         }
-        if ($nextSlide.length > 0) {
+        if (nextSlide.length > 0) {
             // If a slide with the class was found, update the carousel to display it
-            $('#projectsCarousel').carousel($nextSlide.index());
+            $('#projectsCarousel').carousel(nextSlide.index());
         } else {
             // If no slide with the class was found, do normal next
             $('#projectsCarousel').carousel('next');
@@ -40,7 +42,7 @@ function goToNextSlide() {
 }
 
 function goToPrevSlide() {
-    console.log("Going to next slide...");
+    // console.log("Going to prev slide...");
     // Hide the project box detail if open
     tryHideCurrentBox();
     // Hide author detail if open
@@ -82,12 +84,12 @@ myCarousel.addEventListener('touchstart', function(e) {
 myCarousel.addEventListener('touchend', function(e) {
   touchEndX = e.changedTouches[0].clientX;
   touchEndY = e.changedTouches[0].clientY;
-  handleCarouselSwipe();
+  handleCarouselSwipe(event);
   allowStartCarousel();
 });
 
-function handleCarouselSwipe() {
-  var swipeThreshold = 200; // Adjust this value as needed
+function handleCarouselSwipe(event) {
+  var swipeThreshold = 120; // Adjust this value as needed
 
   // Calculate the differences in X and Y coordinates
   var deltaX = touchEndX - touchStartX;
@@ -97,11 +99,17 @@ function handleCarouselSwipe() {
   if (Math.abs(deltaX) > Math.abs(deltaY) && Math.abs(deltaX) > swipeThreshold && window.innerWidth < 768) 
   {
     if (deltaX > 0) {
+      console.log("Swiped right");
       goToPrevSlide();
     } 
     else {
+      console.log("Swiped left");
       goToNextSlide();
     }
+    event.preventDefault();
+  }
+  else {
+    console.log("Not a horizontal swipe");
   }
 
   // Reset touch variables
