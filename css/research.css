@@ -5,26 +5,18 @@ html, body {
 .text-section {
     display: block;
     /* background-image: url(../images/backgrounds/levy_spodni_roh.svg), url(../images/backgrounds/pravy_horni_roh.svg); */
-    background-image: url(../images/backgrounds/levy_spodni_roh.svg);
+    /* background-image: url(../images/backgrounds/levy_spodni_roh.svg);
     background-repeat: no-repeat, no-repeat;
     background-position: bottom left, top right;
-    background-size: contain, contain;   
+    background-size: contain, contain;    */
     background-color: var(--blue);
+
     /* background-image: url(../images/backgrounds/pravy_horni_roh.svg);
     background-repeat: no-repeat;
     background-position: bottom right;
     background-size: cover; */
 
     overflow: hidden;
-}
-
-#pravy-horni-bg {
-    position: absolute; 
-    top: 0; 
-    right: 0;
-    height: 100vh; 
-    pointer-events: none; 
-    z-index: 1;
 }
 
 /* #region  research section */
@@ -117,6 +109,32 @@ html, body {
     height: 500px;
 }
 
+#pravy-horni-bg {
+    position: absolute; 
+    top: 0; 
+    right: 0;
+    width: 40vw;
+    pointer-events: none; 
+    z-index: 1;
+}
+
+@media (max-width: 1600px) {
+    #pravy-horni-bg {
+        width: 50vw;
+    }
+}
+
+@media (max-width: 1250px) {
+    #pravy-horni-bg {
+        width: 57vw;
+    }
+
+    #panacek-dalekohled {
+        max-width: 15vw;
+        min-width: 100px;
+    }
+}
+
 /* #endregion */
 
 
@@ -145,6 +163,16 @@ html, body {
     margin-top: auto;
     height: 300px;
     transform: translateY(30%);
+}
+
+#levy-dolni-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 110vw;
+    z-index: 1;
+    /* transform: translateY(-50%); */
+    overflow: visible;
 }
 
 .about-article {
