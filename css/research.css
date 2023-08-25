@@ -111,7 +111,7 @@ html, body {
 
 #pravy-horni-bg {
     position: absolute; 
-    top: 0; 
+    top: -1px; 
     right: 0;
     width: 40vw;
     pointer-events: none; 
@@ -194,7 +194,6 @@ html, body {
     font-weight: 900;
     font-size: 1.7rem;
     margin: 0;
-    margin-right: 34px;
 }
 
 .about-text .line-sep {
