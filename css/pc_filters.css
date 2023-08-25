@@ -19,7 +19,7 @@
     opacity: 0;
     margin: 0px;
     padding-top: 0px;
-    padding-left: 15px;
+    padding-right: 15px;
     position: relative;
     top: 0;
     left: 0;
@@ -72,7 +72,7 @@
 .carousel__filter-button img {
     width: 45px;
     height: 45px;
-    padding-right: 10px;
+    /* padding-right: 10px; */
     margin: 0;
 }
 
@@ -81,9 +81,9 @@
     overflow: hidden;
     font-size: 14px;
     font-weight: bold;
-    text-align: right;
+    text-align: left;
     visibility: hidden;
-    margin: 4px 7px 4px 0px;
+    margin: 4px 15px 4px 0px;
     overflow-wrap: none;
     max-width: 0px;
     color: rgba(0, 0, 0, 0);
@@ -92,7 +92,7 @@
 
 .carousel__filter-button:hover .carousel__filter-button-detail {
     max-width: 230px;
-    padding: 1vh 0.4vw 1vh 1vw;
+    padding: 1vh 1vw 1vh 0.4vw;
     color: rgba(0, 0, 0, 1);
     visibility: visible;
 }
