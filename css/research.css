@@ -167,7 +167,7 @@ html, body {
 
 #levy-dolni-bg {
     position: absolute;
-    top: 0;
+    top: -75px;
     left: 0;
     width: 110vw;
     z-index: 1;
