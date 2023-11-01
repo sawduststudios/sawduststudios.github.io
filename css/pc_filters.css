@@ -83,7 +83,7 @@
     font-weight: bold;
     text-align: left;
     visibility: hidden;
-    margin: 4px 15px 4px 0px;
+    margin: 4px 5px 4px 5px;
     overflow-wrap: none;
     max-width: 0px;
     color: rgba(0, 0, 0, 0);
@@ -104,7 +104,8 @@
 
 .carousel__filter-button.active-filter .carousel__filter-button-detail {
     max-width: 230px;
-    padding: 1vh 0.4vw 1vh 1vw;
+    /* padding: 1vh 0.4vw 1vh 1vw; */
+    padding: 1vh 1vw 1vh 0.4vw;
     color: rgba(0, 0, 0, 1);
     visibility: visible;
 }

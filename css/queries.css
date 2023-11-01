@@ -5,6 +5,10 @@
         object-fit: cover;
     }
 
+    .carousel__filter-button img {
+        transform: translateX(6px);
+    }
+
     .carousel__filter-button:hover .carousel__filter-button-detail {
         max-width: 0px;
         padding-left: 3px;
@@ -16,10 +20,12 @@
         padding: 0;
         visibility: hidden;
         padding-left: 3px;
+        margin: 5px;
     }
 
     .carousel__filter-label {
         display: block;
+        margin-left: 20px;
     }
 
     .carousel__filter-button:hover {
