@@ -1,5 +1,16 @@
 # TODO LIST
 
+https://codepen.io/AbubakerSaeed/pen/abzWqPb
+https://codepen.io/stephaniewalter/pen/xxVgReM
+https://codepen.io/antho-fsy/full/wJqWKj
+
+https://freefrontend.com/css-animation-examples/page/3/
+
+
+- filtorvat slidy pomoci data atributu
+potom jen v css based on the data att dat display none nebo ne
+EZ
+
 ## Ze schůzky s Vaškem
 
 - záštita dolu
